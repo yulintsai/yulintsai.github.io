@@ -15,7 +15,7 @@
 <meta itemprop="description" content="Oops 希望大家都不要遇到 Helm 2 -&gt; Helm 3 後 突然無法Upgrade Release">
 <meta itemprop="datePublished" content="2020-10-02T11:30:56+00:00" />
 <meta itemprop="dateModified" content="2020-10-02T11:30:56+00:00" />
-<meta itemprop="wordCount" content="75">
+<meta itemprop="wordCount" content="76">
 
 
 
@@ -116,7 +116,7 @@
   <h1 id="oops-希望大家都不要遇到">Oops 希望大家都不要遇到</h1>
 <p>Helm 2 -&gt; Helm 3 後 突然無法Upgrade Release</p>
 <h1 id="why">Why</h1>
-<p>在 helm 2 to helm 3遷移後，我們把k8s直接做升級了。<img src="/images/emoticon/emoticon16.gif" alt="/images/emoticon/emoticon16.gif">
+<p>在 helm 2 to helm 3遷移後，我們把k8s直接做升級了。
 helm3是支援k8s 1.16版本的，所以在yaml檢查上會把 <code>apps/v1beta2</code> 做警告並不能使用
 以下介紹幾個k8s異動類別</p>
 <h2 id="deployment">Deployment</h2>
@@ -159,7 +159,7 @@ helm3是支援k8s 1.16版本的，所以在yaml檢查上會把 <code>apps/v1beta
 <p>之後就趕緊找出原因吧。</p>
 <h2 id="心得">心得</h2>
 <p>一開始你一定會慌，所以請先保持冷靜，請先通報夥伴們後，給個時間找問題，並提供其他CD方式(給夥伴一點安心)，
-並在修正後，檢討如何避免此狀況的發生！<img src="/images/emoticon/emoticon13.gif" alt="/images/emoticon/emoticon13.gif"></p>
+並在修正後，檢討如何避免此狀況的發生！</p>
 
 </div>
 

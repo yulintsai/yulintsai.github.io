@@ -15,7 +15,7 @@
 <meta itemprop="description" content="在Pipelines需要使用DB或其他服務時怎麼辦？ 在CI/CD的流程中跑testing是很重要的，但有些test case需要使用DB或其他服務時就可以用Drone Pipelines Service設定把你需要的服務掛進來，例如:redis, mysql, nsq, cassandra or scylla &hellip;。 只要相關服務支援使用image讓docker啟動，就能在Pipelines單獨起服務來使用唷！是不是非常非常方便～">
 <meta itemprop="datePublished" content="2020-09-22T09:54:30+00:00" />
 <meta itemprop="dateModified" content="2020-09-22T09:54:30+00:00" />
-<meta itemprop="wordCount" content="201">
+<meta itemprop="wordCount" content="202">
 
 
 
@@ -216,12 +216,12 @@ services:
 </code></pre></div><h2 id="oops-services-初始化時間不夠">Oops Services 初始化時間不夠</h2>
 <p>別著急！啟動容器後，在容器內運行的程式需要花一些時間來初始化並啟動服務。
 在連接Services之前，請確認服務有足夠的時間進行初始化的動作。
-而其中一個最快的解決方案是使用sleep命令，讓我們的Pipeline多等Services一會兒。<img src="/images/emoticon/emoticon75.gif" alt="/images/emoticon/emoticon75.gif"></p>
+而其中一個最快的解決方案是使用sleep命令，讓我們的Pipeline多等Services一會兒。</p>
 <h2 id="oops-hostname-有時候會寫錯">Oops Hostname 有時候會寫錯</h2>
 <p>Service的Hostname就是你在service下一層定義的name，以上面我寫的redis範例就是<code>cachehost</code></p>
 <p>來源：
 <a href="https://docs.drone.io/pipeline/docker/syntax/services/">官網說明文件</a>
-以及感謝<a href="https://ithelp.ithome.com.tw/users/20103420">weiweiwesley</a> 提供NSQ的Drone Services 設定 <img src="/images/emoticon/emoticon08.gif" alt="/images/emoticon/emoticon08.gif"></p>
+以及感謝<a href="https://ithelp.ithome.com.tw/users/20103420">weiweiwesley</a> 提供NSQ的Drone Services 設定</p>
 
 </div>
 

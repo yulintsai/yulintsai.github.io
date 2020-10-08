@@ -75,7 +75,8 @@ GPG(GNU Privacy Guard)也可以說是GnuPG，是一個加密工具，通常用�
       
       <guid>https://yulintsai.github.io/post/day-2/</guid>
       <description>在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
-那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明</description>
+那麼我們就開始來玩Gitea吧 !
+VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明</description>
     </item>
     
   </channel>

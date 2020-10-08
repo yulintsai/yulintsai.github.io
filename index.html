@@ -24,7 +24,7 @@
 <meta property="og:description" content="My Notes" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yulintsai.github.io/" />
-<meta property="og:updated_time" content="2020-10-07T10:08:03+00:00" />
+<meta property="og:updated_time" content="2020-10-08T12:00:02+00:00" />
 
 
 
@@ -102,6 +102,24 @@
   <div class="posts">
       <article class="post">
         <h1 class="post-title">
+          <a href="https://yulintsai.github.io/post/day-30/">[Day 30] Oops！最終章 DevSecOps</a>
+        </h1>
+
+        <div class="post-date">
+          <time datetime="2020-10-08T12:00:02Z">Oct 8, 2020</time> &middot; 2 min read
+        </div>
+
+        <div>
+          讓我們來小小回顧一下，這些三十天的我們的Oops文章
+Oops Gitea 系列  [Day 2] Oops！Gitea - 建置與安裝 [Day 3] Oops！Gitea - 備份與維護 [Day 4] Oops！Gitea - 超方便的功能及應用 [Day 5] Oops！Gitea - 防止git commit被偽造 [Day 6] Oops！Gitea - WebHook [Day 7] Oops！Gitea - Container log to ELK [Day 8] Oops！Gitea - 專案怎麼那麼肥！？  Oops Docker 系列  [Day 9] Oops！Docker - Image 瘦身大法  Oops Drone CI/CD 系列  [Day 10] Oops！Drone - 建置與安裝 [Day 11] Oops！Drone - 快速上手 [Day 12] Oops！Drone - 進階應用 [Day 13] Oops！Drone - Cron Jobs [Day 14] Oops！Drone - Pipelines Services [Day 27] Oops！CI/CD trigger WebHook to Telegram Bot  Oops Golang 系列  [Day 15] Oops！Golang - Linter [Day 16] Oops！Golang - CI/CD with Data Race Detector [Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！  Oops gRPC 系列  [Day 18] Oops！gRPC - 問題整理分享 [Day 19] Oops！gRPC - Protoc 容器化實作 [Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks  Oops Helm 系列  [Day 21] Oops！Helm - 起手式 [Day 22] Oops！Helm Template and Value [Day 23] Oops！Helm - 2 to 3 [Day 24] Oops！Helm - Can Not Upgrade Release [Day 25] Oops！Helm - 容器化實作 [Day 26] Oops！GitOps with Helm  Oops OpsDev 實作  [Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram  Oops DevOps  [Day 29] Oops！Block DevOps  Oops DevSecOps 最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。
+        </div>
+
+        <div class="read-more-link">
+          <a href="https://yulintsai.github.io/post/day-30/">Read More</a>
+        </div>
+      </article>
+      <article class="post">
+        <h1 class="post-title">
           <a href="https://yulintsai.github.io/post/day-29/">[Day 29] Oops！Block DevOps</a>
         </h1>
 
@@ -127,8 +145,7 @@
         </div>
 
         <div>
-          Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。
-流程 在 Google Cloud Status Dashboard 下方找到 JSON Feed，用golang寫個定時訪問的程式(小爬蟲) 當有任何事故發生搶在第一時間知道！並同時準備災害預演的流程。
+          Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。 所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。
         </div>
 
         <div class="read-more-link">
@@ -256,24 +273,6 @@ git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-app
 
         <div class="read-more-link">
           <a href="https://yulintsai.github.io/post/day-20/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-19/">[Day 19] Oops！gRPC - Protoc 容器化實作</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2020-09-27T12:00:58Z">Sep 27, 2020</time> &middot; 1 min read
-        </div>
-
-        <div>
-          Oops 安裝 gRPC Protoc好麻煩！ 相信每個人在裝gRPC Protoc，可能都要花一些時間，還可能要處理一些環境問題，那就讓我們就把他封裝成容易讓大家用docker run起來build就好了！
-目的 Builder: 做一個image可以直接透過docker啟動container去幫你build proto檔案，使用者就不用再安裝proto+gprc了，只需要有裝docker就可以build proto檔案。
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-19/">Read More</a>
         </div>
       </article>
   </div>

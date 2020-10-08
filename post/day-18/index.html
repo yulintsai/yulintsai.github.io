@@ -185,7 +185,7 @@ func (m *HelloRequest) GetMailCountDefault() float64 {
 }
 </code></pre><p>以<code>float64</code>來看，用wrappers的型態，當client端真的沒傳值會回傳nil，而用預設的型態會預設回傳0！</p>
 <h2 id="4-注意client端連線使用方式需改善">4. 注意，Client端連線使用方式需改善！</h2>
-<p>Client端連線沒複用，每次請求都建一次連線，造成連線阻塞會越建越慢，當初還以為是Server端有問題找了半天。<img src="/images/emoticon/emoticon04.gif" alt="/images/emoticon/emoticon04.gif"></p>
+<p>Client端連線沒複用，每次請求都建一次連線，造成連線阻塞會越建越慢，當初還以為是Server端有問題找了半天。</p>
 
 </div>
 

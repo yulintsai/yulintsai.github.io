@@ -24,7 +24,7 @@
 <meta property="og:description" content="My Notes" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yulintsai.github.io/" />
-<meta property="og:updated_time" content="2020-10-07T10:08:03+00:00" />
+<meta property="og:updated_time" content="2020-10-08T12:00:02+00:00" />
 
 
 
@@ -102,20 +102,20 @@
   <div class="posts">
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-30/">[Day 30] Oops！最終章 DevSecOps</a>
+          <a href="https://yulintsai.github.io/post/day-27/">[Day 27] Oops！CI/CD trigger WebHook to Telegram Bot</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-18T11:22:31Z">Sep 18, 2020</time> &middot; 2 min read
+          <time datetime="2020-09-18T11:22:31Z">Sep 18, 2020</time> &middot; 1 min read
         </div>
 
         <div>
-          Oops 終於到了最終章了!!! 讓我們來小小回顧一下，這些三十天的我們的Oops文章
-Oops Gitea 系列  [Day 2] Oops！Gitea - 建置與安裝 [Day 3] Oops！Gitea - 備份與維護 [Day 4] Oops！Gitea - 超方便的功能及應用 [Day 5] Oops！Gitea - 防止git commit被偽造 [Day 6] Oops！Gitea - WebHook [Day 7] Oops！Gitea - Container log to ELK [Day 8] Oops！Gitea - 專案怎麼那麼肥！？  Oops Docker 系列  [Day 9] Oops！Docker - Image 瘦身大法  Oops Drone CI/CD 系列  [Day 10] Oops！Drone - 建置與安裝 [Day 11] Oops！Drone - 快速上手 [Day 12] Oops！Drone - 進階應用 [Day 13] Oops！Drone - Cron Jobs [Day 14] Oops！Drone - Pipelines Services [Day 27] Oops！CI/CD trigger WebHook to Telegram Bot  Oops Golang 系列  [Day 15] Oops！Golang - Linter [Day 16] Oops！Golang - CI/CD with Data Race Detector [Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！  Oops gRPC 系列  [Day 18] Oops！gRPC - 問題整理分享 [Day 19] Oops！gRPC - Protoc 容器化實作 [Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks  Oops Helm 系列  [Day 21] Oops！Helm - 起手式 [Day 22] Oops！Helm Template and Value [Day 23] Oops！Helm - 2 to 3 [Day 24] Oops！Helm - Can Not Upgrade Release [Day 25] Oops！Helm - 容器化實作 [Day 26] Oops！GitOps with Helm  Oops OpsDev 實作  [Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram  Oops DevOps  [Day 29] Oops！Block DevOps  Oops DevSecOps 最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。
+          前言 有時候我們在CI/CD流程進行中時，通常都是被動告知的，那如果想要透過Pipeline主動告知要怎麼做呢？ 我們在第六天[Day 6] Oops！Gitea - WebHook有介紹到Gitea搭配WebHook的做法，而如果要在CI/CD上觸發WebHook去通知Telegram要怎麼做呢？
+Telegram Bot API 首先讓我們來瞧瞧Telegram Bot API，Telegram Bot提供API可以直接打Telegram Bot API發送訊息到指定的聊天室
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-30/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-27/">Read More</a>
         </div>
       </article>
       <article class="post">
@@ -255,7 +255,8 @@ GPG(GNU Privacy Guard)也可以說是GnuPG，是一個加密工具，通常用�
 
         <div>
           在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
-那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明
+那麼我們就開始來玩Gitea吧 !
+VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明
         </div>
 
         <div class="read-more-link">

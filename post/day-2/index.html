@@ -13,10 +13,11 @@
 
 <meta itemprop="name" content="[Day 2] Oops！Gitea - 建置與安裝">
 <meta itemprop="description" content="在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
-那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明">
+那麼我們就開始來玩Gitea吧 !
+VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明">
 <meta itemprop="datePublished" content="2020-09-10T09:39:47+00:00" />
 <meta itemprop="dateModified" content="2020-09-10T09:39:47+00:00" />
-<meta itemprop="wordCount" content="98">
+<meta itemprop="wordCount" content="100">
 
 
 
@@ -26,12 +27,14 @@
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Day 2] Oops！Gitea - 建置與安裝"/>
 <meta name="twitter:description" content="在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
-那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明"/>
+那麼我們就開始來玩Gitea吧 !
+VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明"/>
 
 
 <meta property="og:title" content="[Day 2] Oops！Gitea - 建置與安裝" />
 <meta property="og:description" content="在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
-那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明" />
+那麼我們就開始來玩Gitea吧 !
+VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yulintsai.github.io/post/day-2/" />
 <meta property="article:published_time" content="2020-09-10T09:39:47+00:00" />
@@ -119,7 +122,7 @@
   <h3 id="在我們團隊中一切devops的運作的起點就是從gitops開始相信大家都有在使用好用的github另外想要私有專案公司內及個人使用的前提來挑選git服務我選擇了gitea主要是個人偏愛go語言還有安裝及升級比其他服務來得容易許多">在我們團隊中，一切<code>DevOps</code>的運作的起點就是從<code>GitOps</code>開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了<code>gitea</code>，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。</h3>
 <h3 id="另外gitea的開源專案也持續在維護及更新">另外<code>gitea</code>的開源專案也持續在維護及更新。</h3>
 <p><a href="https://docs.gitea.io/zh-tw/comparison/">gitea對於其他Git託管服務的比較圖</a></p>
-<p>那麼我們就開始來玩Gitea吧 <img src="/images/emoticon/emoticon37.gif" alt="/images/emoticon/emoticon37.gif"></p>
+<p>那麼我們就開始來玩Gitea吧 !</p>
 <h1 id="vm建置-gcp">VM建置 (GCP)</h1>
 <hr>
 <p>首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。
@@ -170,7 +173,7 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker-compose up -d
 </code></pre></div><p>使用docker-compose來安裝Gitea的原因之一是可以讓我非常無痛的更版。</p>
 <p>明天會有示範我都怎麼把gitea升版的</p>
-<h2 id="oops小心機器會自動被os更新重啟-imagesemoticonemoticon50gifimagesemoticonemoticon50gif">Oops！小心機器會自動被OS更新重啟 <img src="/images/emoticon/emoticon50.gif" alt="/images/emoticon/emoticon50.gif"></h2>
+<h2 id="oops小心機器會自動被os更新重啟-">Oops！小心機器會自動被OS更新重啟 !</h2>
 <h4 id="之前有遇過vm機器在無預警下被重啟後來去翻systemlog才發現是機器內的os自動更新觸發的">之前有遇過VM機器在無預警下被重啟，後來去翻SystemLog才發現是機器內的OS自動更新觸發的。</h4>
 <p><strong>所以強烈建議將自動更新的設定關閉！</strong></p>
 <p>以下是linux範例</p>

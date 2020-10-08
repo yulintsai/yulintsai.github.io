@@ -13,8 +13,7 @@
       <pubDate>Tue, 06 Oct 2020 10:35:03 +0000</pubDate>
       
       <guid>https://yulintsai.github.io/post/day-28/</guid>
-      <description>Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。
-流程 在 Google Cloud Status Dashboard 下方找到 JSON Feed，用golang寫個定時訪問的程式(小爬蟲) 當有任何事故發生搶在第一時間知道！並同時準備災害預演的流程。</description>
+      <description>Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。 所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。</description>
     </item>
     
     <item>
@@ -61,7 +60,7 @@
       <pubDate>Sun, 20 Sep 2020 00:08:59 +0000</pubDate>
       
       <guid>https://yulintsai.github.io/post/day-12/</guid>
-      <description>大家早安 相信大家看完昨日的 [Day 11] Oops！Drone - 快速上手 ，並且練習完昨天的題目後，已經奠定了一些基礎，那麼我們今天來進階練習ㄧ下～ 這些練習或許在未來的某一天，你們可以在某個地方應用的到！進階練習 1.</description>
+      <description>大家早安 相信大家看完昨日的 [Day 11] Oops！Drone - 快速上手 ，並且練習完昨天的題目後，已經奠定了一些基礎，那麼我們今天來進階練習ㄧ下～ 這些練習或許在未來的某一天，你們可以在某個地方應用的到！</description>
     </item>
     
     <item>

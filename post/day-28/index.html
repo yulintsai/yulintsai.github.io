@@ -12,11 +12,10 @@
   
 
 <meta itemprop="name" content="[Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram">
-<meta itemprop="description" content="Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。
-流程 在 Google Cloud Status Dashboard 下方找到 JSON Feed，用golang寫個定時訪問的程式(小爬蟲) 當有任何事故發生搶在第一時間知道！並同時準備災害預演的流程。">
+<meta itemprop="description" content="Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。 所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。">
 <meta itemprop="datePublished" content="2020-10-06T10:35:03+00:00" />
 <meta itemprop="dateModified" content="2020-10-06T10:35:03+00:00" />
-<meta itemprop="wordCount" content="233">
+<meta itemprop="wordCount" content="234">
 
 
 
@@ -25,13 +24,11 @@
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram"/>
-<meta name="twitter:description" content="Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。
-流程 在 Google Cloud Status Dashboard 下方找到 JSON Feed，用golang寫個定時訪問的程式(小爬蟲) 當有任何事故發生搶在第一時間知道！並同時準備災害預演的流程。"/>
+<meta name="twitter:description" content="Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。 所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。"/>
 
 
 <meta property="og:title" content="[Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram" />
-<meta property="og:description" content="Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。
-流程 在 Google Cloud Status Dashboard 下方找到 JSON Feed，用golang寫個定時訪問的程式(小爬蟲) 當有任何事故發生搶在第一時間知道！並同時準備災害預演的流程。" />
+<meta property="og:description" content="Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。 所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yulintsai.github.io/post/day-28/" />
 <meta property="article:published_time" content="2020-10-06T10:35:03+00:00" />
@@ -117,7 +114,7 @@
   </div>
 
   <h1 id="oops-出於ops的原因開發去">Oops 出於Ops的原因開發去</h1>
-<p>之前就有遇過當<code>Google Cloud</code> 有發生狀況而我們使用者都不知道的情況。<img src="/images/emoticon/emoticon04.gif" alt="/images/emoticon/emoticon04.gif">
+<p>之前就有遇過當<code>Google Cloud</code> 有發生狀況而我們使用者都不知道的情況。
 所以想透過在本機or其他業者的VM來監控<code>Google Cloud Status</code>，避免Google整個掛掉後，沒任何通知。</p>
 <h1 id="流程">流程</h1>
 <p>在 <a href="https://status.cloud.google.com/">Google Cloud Status Dashboard</a> 下方找到 <a href="https://status.cloud.google.com/incidents.json">JSON Feed</a>，用golang寫個定時訪問的程式(小爬蟲)
@@ -203,8 +200,7 @@ Related Services: Operations
 Severity Level: medium
 </code></pre></div><h4 id="想更了解code的人我有放在github上開放給讀者們查閱-gggcp-githubhttpsgithubcomyulintsaigggcptreemain也可以直接從docker-hub下載rain123473gggcplatesthttpshubdockercomrepositorydockerrain123473gggcp">想更了解code的人，我有放在github上，開放給讀者們查閱 <a href="https://github.com/yulintsai/gggcp/tree/main">GGGCP github</a>，也可以直接從Docker Hub下載<a href="https://hub.docker.com/repository/docker/rain123473/gggcp">rain123473/gggcp:latest</a></h4>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker pull rain123473/gggcp:latest
-</code></pre></div><p><img src="/images/emoticon/emoticon62.gif" alt="/images/emoticon/emoticon62.gif"></p>
-<h4 id="今天是簡單介紹簡易版的所以關於時間的比例分配以及比對流程想自己改的話也歡迎大家可以去fork下來改成自己的版本唷">今天是簡單介紹簡易版的，所以關於時間的比例分配以及比對流程想自己改的話，也歡迎大家可以去fork下來改成自己的版本唷！</h4>
+</code></pre></div><h4 id="今天是簡單介紹簡易版的所以關於時間的比例分配以及比對流程想自己改的話也歡迎大家可以去fork下來改成自己的版本唷">今天是簡單介紹簡易版的，所以關於時間的比例分配以及比對流程想自己改的話，也歡迎大家可以去fork下來改成自己的版本唷！</h4>
 
 </div>
 

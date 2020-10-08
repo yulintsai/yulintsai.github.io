@@ -164,7 +164,7 @@ message HelloResponse {
 <pre><code>docker run -v $(pwd):/go/src/app -w /go/src/app rain123473/proto-builder:g1.14-p3.12.0 sh -c 'protoc *.proto --go_out=plugins=grpc:.;'
 </code></pre><p><img src="https://ithelp.ithome.com.tw/upload/images/20200927/20115289EvzvG38ahL.png" alt="https://ithelp.ithome.com.tw/upload/images/20200927/20115289EvzvG38ahL.png"></p>
 <p>就可以看到.pb.go檔案被build出來囉！</p>
-<p>這樣可以讓大家的builder版本一致以及不用再花費時間在安裝protoc的流程上 <img src="/images/emoticon/emoticon07.gif" alt="/images/emoticon/emoticon07.gif"></p>
+<p>這樣可以讓大家的builder版本一致以及不用再花費時間在安裝protoc的流程上</p>
 <p>明天會教大家利用該方式將builder導入自動化流程內。敬請期待唷！</p>
 
 </div>
