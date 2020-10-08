@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.76.2" />
+
+  <title>[Day 3] Oops！Gitea - 備份與維護 &middot; RainForest Notes</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="[Day 3] Oops！Gitea - 備份與維護">
+<meta itemprop="description" content="大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。">
+<meta itemprop="datePublished" content="2020-09-11T10:18:46+00:00" />
+<meta itemprop="dateModified" content="2020-09-11T10:18:46+00:00" />
+<meta itemprop="wordCount" content="68">
+
+
+
+<meta itemprop="keywords" content="gitea,gcp,snapshot," />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Day 3] Oops！Gitea - 備份與維護"/>
+<meta name="twitter:description" content="大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。"/>
+
+
+<meta property="og:title" content="[Day 3] Oops！Gitea - 備份與維護" />
+<meta property="og:description" content="大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yulintsai.github.io/post/day-/" />
+<meta property="article:published_time" content="2020-09-11T10:18:46+00:00" />
+<meta property="article:modified_time" content="2020-09-11T10:18:46+00:00" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+      
+
+      <h1>RainForest Notes</h1>
+
+      
+      <p class="lead">My Notes</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://yulintsai.github.io/">Home</a>
+        </li>
+        
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>[Day 3] Oops！Gitea - 備份與維護</h1>
+
+  <div class="post-date">
+    <time datetime="2020-09-11T10:18:46Z">Sep 11, 2020</time> &middot; 1 min read
+  </div>
+
+  <h3 id="大家早安今天要談的是gitea的備份與維護">大家早安，今天要談的是gitea的備份與維護</h3>
+<h2 id="備份">備份</h2>
+<hr>
+<h3 id="由於上篇我們把gitea安裝httpsithelpithomecomtwarticles10234880在gcp-vm上所以這篇主要是從gcp-vm上的角度來看待備份與維護的事項唷">由於上篇我們把<a href="https://ithelp.ithome.com.tw/articles/10234880">gitea安裝</a>在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！</h3>
+<h3 id="備份的策略每個團隊都有些不同沒有一定要怎麼做需要團隊成員的討論">備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。</h3>
+<p>本人是使用GCP上的快照功能進行備份，請至快照設定介面<a href="https://console.cloud.google.com/compute/snapshots">請點擊</a>
+建立快照排程，<strong>為了不影響同事使用gitea</strong>，盡可能設定在同事沒上班的時間進行快照。
+<strong>快照週期</strong>&amp;<strong>保留日期設定</strong>，可以與同事們討論後設定，這些參數會影響到，<strong>若真的要從快照恢復的話，大家都能接受的時間點。</strong></p>
+<p>這裡有推薦的文章，在下方，大家有興趣可以進去點閱唷！</p>
+<p><a href="https://blog.tw.cloud-ace.com/compute-engine/how-to-backup-your-gcp-vm-easily-and-automatically-with-snapshot-schedule/">https://blog.tw.cloud-ace.com/compute-engine/how-to-backup-your-gcp-vm-easily-and-automatically-with-snapshot-schedule/</a></p>
+<h2 id="維護">維護</h2>
+<hr>
+<h3 id="gitea升版sop流程">Gitea升版SOP流程</h3>
+<ol>
+<li>請至<a href="https://github.com/go-gitea/gitea/releases">Github</a>，查看該版本的Change Log</li>
+<li>請至<a href="https://hub.docker.com/r/gitea/gitea/tags">DockerHub</a>，查看是否有該版本的image</li>
+<li>請預先告知有使用Gitea的同事</li>
+<li>公窗群組也請告知執行「時間點」及「原因」</li>
+<li>執行升版前一刻，也請公窗告知開始動作</li>
+<li>編輯docker-compose.yml 將image更改版本</li>
+<li>下指令更新 <code>docker-compose up -d</code></li>
+<li>確認網頁是否恢復可以正常使用</li>
+<li>左下角有版本號可以確認此更版是否正確
+<img src="https://ithelp.ithome.com.tw/upload/images/20200911/20115289k4WbluOQDs.png" alt="https://ithelp.ithome.com.tw/upload/images/20200911/20115289k4WbluOQDs.png"></li>
+<li>透過群組告知同事可以使用了，並請同事試試看若有異常需要再評估是否退版！</li>
+<li>重要：需要觀察 <strong>CPU</strong>&amp;<strong>Memory</strong> 線圖與以往有差異！若此版本造成機器loading太重需要退版！退版流程與升版一致。</li>
+</ol>
+<h3 id="vm規格升級sop流程">VM規格升級SOP流程</h3>
+<ol>
+<li>請預先告知，有使用此台VM相關服務的同事</li>
+<li>公窗群組也請告知執行「時間點」及「原因」</li>
+<li>執行升級前一刻，也請公窗告知開始動作</li>
+<li>下指令 <code>docker-compose stop</code> 暫停docker-compose相關服務</li>
+<li>VM 關機 (可透過GCP介面操作)</li>
+<li>VM 調整規格 (可透過GCP介面操作)</li>
+<li>啟動VM (可透過GCP介面操作)</li>
+<li>進入VM 下指令 <code>docker-compose up -d</code></li>
+<li>確認網頁及相關服務是否恢復可以正常使用</li>
+<li>透過群組告知同事可以使用了，並請同事試試看，若有異常需要再趕緊查看原因</li>
+<li>重要：需要觀察 <strong>CPU</strong>&amp;<strong>Memory</strong> 線圖與預期結果是否相同！</li>
+</ol>
+<h3 id="以上的流程每一個步驟都是以同事溝通為考量為優先希望大家都能互相體諒imagesemoticonemoticon37gifimagesemoticonemoticon37gif">以上的流程，每一個步驟都是以同事溝通為考量為優先，希望大家都能互相體諒。<img src="/images/emoticon/emoticon37.gif" alt="/images/emoticon/emoticon37.gif"></h3>
+<h4 id="大家可以參考參考不一定要照做唷也歡迎留言提出其他很棒的做法imagesemoticonemoticon12gifimagesemoticonemoticon12gif">大家可以參考參考，不一定要照做唷～也歡迎留言提出其他很棒的做法<img src="/images/emoticon/emoticon12.gif" alt="/images/emoticon/emoticon12.gif"></h4>
+<h3 id="oops-升版造成的錯誤">Oops 升版造成的錯誤</h3>
+<p>若升版前或升版後沒告知到同事，可能會造成別人原本使用，會有異動或者錯誤。
+原本的功能都可能無法使用。所以勢必做到告知的動作！</p>
+<h3 id="今日小結">今日小結:</h3>
+<p>其實今天主要分享的主題重點就是</p>
+<p><strong>好的維護方式，是夥伴們都覺得好，才叫好。
+單方面自己覺得維護的好，但造成別人困擾的話那就不好囉。</strong></p>
+<h3 id="今日我們就先到這邊明天會跟大家分享gitea超方便的功能及應用">今日我們就先到這邊，明天會跟大家分享Gitea超方便的功能及應用～</h3>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy;  2020
+
+    
+
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

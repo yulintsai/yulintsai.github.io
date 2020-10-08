@@ -24,7 +24,7 @@
 <meta property="og:description" content="My Notes" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yulintsai.github.io/" />
-<meta property="og:updated_time" content="2020-09-11T10:18:46+00:00" />
+<meta property="og:updated_time" content="2020-09-12T11:11:19+00:00" />
 
 
 
@@ -98,6 +98,41 @@
   <div class="posts">
       <article class="post">
         <h1 class="post-title">
+          <a href="https://yulintsai.github.io/post/day-4/">[Day 4] Oops！Gitea - 超方便的功能及應用</a>
+        </h1>
+
+        <div class="post-date">
+          <time datetime="2020-09-12T11:11:19Z">Sep 12, 2020</time> &middot; 1 min read
+        </div>
+
+        <div>
+          超方便的功能 - 程式碼搜尋器 (預設是被關閉的) 預設關閉的原因是：
+ Enables code search (uses a lot of disk space, about 6 times more than the repository size).
+        </div>
+
+        <div class="read-more-link">
+          <a href="https://yulintsai.github.io/post/day-4/">Read More</a>
+        </div>
+      </article>
+      <article class="post">
+        <h1 class="post-title">
+          <a href="https://yulintsai.github.io/post/day-/">[Day 3] Oops！Gitea - 備份與維護</a>
+        </h1>
+
+        <div class="post-date">
+          <time datetime="2020-09-11T10:18:46Z">Sep 11, 2020</time> &middot; 1 min read
+        </div>
+
+        <div>
+          大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。
+        </div>
+
+        <div class="read-more-link">
+          <a href="https://yulintsai.github.io/post/day-/">Read More</a>
+        </div>
+      </article>
+      <article class="post">
+        <h1 class="post-title">
           <a href="https://yulintsai.github.io/post/day-3/">[Day 3] Oops！Gitea - 備份與維護</a>
         </h1>
 
@@ -125,7 +160,6 @@
         <div>
           在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
 那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明
- 最低的系統需求就是一片便宜的樹莓派 (Raspberry Pi)。 如果用於團隊，建議使用 2 核 CPU 和 1GB 記憶體。
         </div>
 
         <div class="read-more-link">

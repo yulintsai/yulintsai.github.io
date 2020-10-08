@@ -9,6 +9,15 @@
     <lastBuildDate>Fri, 11 Sep 2020 10:18:46 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/gcp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>[Day 3] Oops！Gitea - 備份與維護</title>
+      <link>https://yulintsai.github.io/post/day-/</link>
+      <pubDate>Fri, 11 Sep 2020 10:18:46 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-/</guid>
+      <description>大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。</description>
+    </item>
+    
+    <item>
+      <title>[Day 3] Oops！Gitea - 備份與維護</title>
       <link>https://yulintsai.github.io/post/day-3/</link>
       <pubDate>Fri, 11 Sep 2020 10:18:46 +0000</pubDate>
       
