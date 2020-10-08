@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>.gitignore on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/.gitignore/</link>
+    <description>Recent content in .gitignore on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 16 Sep 2020 09:43:32 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/.gitignore/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 8] Oops！Gitea - 專案怎麼那麼肥！？</title>
+      <link>https://yulintsai.github.io/post/day-8/</link>
+      <pubDate>Wed, 16 Sep 2020 09:43:32 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-8/</guid>
+      <description>Oops 在跑CI/CD時，有遇過在 git clone step時非常之那麼久(超過1分鐘以上)！  先打開gitea進入此專案主頁 請大家注意到此專案的Size！</description>
+    </item>
+    
+  </channel>
+</rss>

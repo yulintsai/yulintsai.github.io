@@ -6,22 +6,76 @@
     <description>Recent content in Tags on RainForest Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 12 Sep 2020 11:11:19 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 18 Sep 2020 11:22:31 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>drone</title>
+      <link>https://yulintsai.github.io/tags/drone/</link>
+      <pubDate>Fri, 18 Sep 2020 11:22:31 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/tags/drone/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://yulintsai.github.io/tags/docker/</link>
+      <pubDate>Thu, 17 Sep 2020 14:46:11 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>.gitignore</title>
+      <link>https://yulintsai.github.io/tags/.gitignore/</link>
+      <pubDate>Wed, 16 Sep 2020 09:43:32 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/tags/.gitignore/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>gitea</title>
       <link>https://yulintsai.github.io/tags/gitea/</link>
-      <pubDate>Sat, 12 Sep 2020 11:11:19 +0000</pubDate>
+      <pubDate>Wed, 16 Sep 2020 09:43:32 +0000</pubDate>
       
       <guid>https://yulintsai.github.io/tags/gitea/</guid>
       <description></description>
     </item>
     
     <item>
+      <title>telegram bot</title>
+      <link>https://yulintsai.github.io/tags/telegram-bot/</link>
+      <pubDate>Tue, 15 Sep 2020 09:20:02 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/tags/telegram-bot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>webhook</title>
+      <link>https://yulintsai.github.io/tags/webhook/</link>
+      <pubDate>Tue, 15 Sep 2020 09:20:02 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/tags/webhook/</guid>
+      <description></description>
+    </item>
+    
+    <item>
       <title>gcp</title>
       <link>https://yulintsai.github.io/tags/gcp/</link>
-      <pubDate>Fri, 11 Sep 2020 10:18:46 +0000</pubDate>
+      <pubDate>Sun, 13 Sep 2020 12:00:32 +0000</pubDate>
       
       <guid>https://yulintsai.github.io/tags/gcp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>git</title>
+      <link>https://yulintsai.github.io/tags/git/</link>
+      <pubDate>Sun, 13 Sep 2020 12:00:32 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/tags/git/</guid>
       <description></description>
     </item>
     

@@ -6,7 +6,49 @@
     <description>Recent content in gitea on RainForest Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sat, 12 Sep 2020 11:11:19 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/gitea/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 16 Sep 2020 09:43:32 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/gitea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 8] Oops！Gitea - 專案怎麼那麼肥！？</title>
+      <link>https://yulintsai.github.io/post/day-8/</link>
+      <pubDate>Wed, 16 Sep 2020 09:43:32 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-8/</guid>
+      <description>Oops 在跑CI/CD時，有遇過在 git clone step時非常之那麼久(超過1分鐘以上)！  先打開gitea進入此專案主頁 請大家注意到此專案的Size！</description>
+    </item>
+    
+    <item>
+      <title>[Day 7] Oops！Gitea - Container log to ELK</title>
+      <link>https://yulintsai.github.io/post/day-7/</link>
+      <pubDate>Tue, 15 Sep 2020 09:20:02 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-7/</guid>
+      <description>Q:要將gitea上面的Log輸出到ELK上做查詢分析要怎麼做呢？  由於我們裝gitea的方式是使用docker安裝的，那麼我們只需要透過Filebeat來幫我們將Log輸出到Elasticsearch 就好囉！
+ Filebeat Filebeat是用於轉發和集中日誌數據的輕量級傳送程序。作為服務器上的代理安裝，Filebeat監視您指定的日誌文件或位置，收集日誌事件，並將它們轉發到Elasticsearch或 Logstash進行索引。</description>
+    </item>
+    
+    <item>
+      <title>[Day 6] Oops！Gitea - WebHook</title>
+      <link>https://yulintsai.github.io/post/day-6/</link>
+      <pubDate>Mon, 14 Sep 2020 09:37:54 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-6/</guid>
+      <description>WebHook也算是在CI/CD也算是重要的環節之一，今日來帶大家如何讓Gitea觸發WebHook。
+首先，WebHook是什麼？
+ 網頁開發中的Webhook（Webhook）是一種通過自訂回呼函式來增加或更改網頁表現的方法。這些回呼可被可能與原始網站或應用相關的第三方用戶及開發者儲存、修改與管理。術語「Webhook」由傑夫·林德塞（Jeff Lindsay）於2007年通過給電腦編程術語「掛鉤」（Hook）加上字首得來。 - Wiki
+ 那麼用我的方式來說明的話，就是網站間的連動行為。</description>
+    </item>
+    
+    <item>
+      <title>[Day 5] Oops！Gitea - 防止git commit被偽造</title>
+      <link>https://yulintsai.github.io/post/day-5/</link>
+      <pubDate>Sun, 13 Sep 2020 12:00:32 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-5/</guid>
+      <description>在Gitea上使用GPG簽署 [Mac] 今天來教大家在gitea推commit上去時，防止git commit被偽造。
+為什麼會需要使用GPG簽署commit 在自己git的名字跟信箱都被公開的情況下，每個人的commit都可能被偽造。 要如何保證這些commit是由你的電腦下的呢？
+GPG(GNU Privacy Guard)也可以說是GnuPG，是一個加密工具，通常用來驗證身份 現在我們就要來將 git commit 加上 GPG 簽署，讓它 Push 到 Github 等代管平台後，別人可以確定這份 Commit 是你提交的 主要目的是避免git commit 被別人偽造 Homebrew 安裝  如果系統是 MacOS 的人，且有裝 Homebrew 就可以直接用它來安裝，套件名稱為 gnupg brew install gnupg 其他的OS或是沒有 Homebrew 的，可以直接到官方網站下載安裝檔。 官方網站載點</description>
+    </item>
+    
     <item>
       <title>[Day 4] Oops！Gitea - 超方便的功能及應用</title>
       <link>https://yulintsai.github.io/post/day-4/</link>
@@ -15,15 +57,6 @@
       <guid>https://yulintsai.github.io/post/day-4/</guid>
       <description>超方便的功能 - 程式碼搜尋器 (預設是被關閉的) 預設關閉的原因是：
  Enables code search (uses a lot of disk space, about 6 times more than the repository size).</description>
-    </item>
-    
-    <item>
-      <title>[Day 3] Oops！Gitea - 備份與維護</title>
-      <link>https://yulintsai.github.io/post/day-/</link>
-      <pubDate>Fri, 11 Sep 2020 10:18:46 +0000</pubDate>
-      
-      <guid>https://yulintsai.github.io/post/day-/</guid>
-      <description>大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。</description>
     </item>
     
     <item>

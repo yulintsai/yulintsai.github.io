@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/docker/</link>
+    <description>Recent content in docker on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 17 Sep 2020 14:46:11 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 9] Oops！Docker - Image 瘦身大法</title>
+      <link>https://yulintsai.github.io/post/day-9/</link>
+      <pubDate>Thu, 17 Sep 2020 14:46:11 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-9/</guid>
+      <description>今天為大家來簡單介紹Docker在17.05版本後，才支援的新功能。 Docker - Multiple Stage Builds 簡易說明：此功能可以同時操作多個Dockerfiles的行為，使得在build image上方便了許多 需求版本: Docker 17.</description>
+    </item>
+    
+  </channel>
+</rss>

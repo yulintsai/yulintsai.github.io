@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>drone on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/drone/</link>
+    <description>Recent content in drone on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 18 Sep 2020 11:22:31 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/drone/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 10] Oops！Drone - 建置與安裝</title>
+      <link>https://yulintsai.github.io/post/day-10/</link>
+      <pubDate>Fri, 18 Sep 2020 11:22:31 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-10/</guid>
+      <description>VM建置 (GCP)  如果要單獨一台VM，開來跑drone的朋友們看過來！ 在VM的規格，挑選上因為Drone會比較耗CPU 所以我推薦使用c2的CPU
+使用drone build image比較</description>
+    </item>
+    
+  </channel>
+</rss>

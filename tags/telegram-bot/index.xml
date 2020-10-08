@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>telegram bot on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/telegram-bot/</link>
+    <description>Recent content in telegram bot on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 15 Sep 2020 09:20:02 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/telegram-bot/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 7] Oops！Gitea - Container log to ELK</title>
+      <link>https://yulintsai.github.io/post/day-7/</link>
+      <pubDate>Tue, 15 Sep 2020 09:20:02 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-7/</guid>
+      <description>Q:要將gitea上面的Log輸出到ELK上做查詢分析要怎麼做呢？  由於我們裝gitea的方式是使用docker安裝的，那麼我們只需要透過Filebeat來幫我們將Log輸出到Elasticsearch 就好囉！
+ Filebeat Filebeat是用於轉發和集中日誌數據的輕量級傳送程序。作為服務器上的代理安裝，Filebeat監視您指定的日誌文件或位置，收集日誌事件，並將它們轉發到Elasticsearch或 Logstash進行索引。</description>
+    </item>
+    
+    <item>
+      <title>[Day 6] Oops！Gitea - WebHook</title>
+      <link>https://yulintsai.github.io/post/day-6/</link>
+      <pubDate>Mon, 14 Sep 2020 09:37:54 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-6/</guid>
+      <description>WebHook也算是在CI/CD也算是重要的環節之一，今日來帶大家如何讓Gitea觸發WebHook。
+首先，WebHook是什麼？
+ 網頁開發中的Webhook（Webhook）是一種通過自訂回呼函式來增加或更改網頁表現的方法。這些回呼可被可能與原始網站或應用相關的第三方用戶及開發者儲存、修改與管理。術語「Webhook」由傑夫·林德塞（Jeff Lindsay）於2007年通過給電腦編程術語「掛鉤」（Hook）加上字首得來。 - Wiki
+ 那麼用我的方式來說明的話，就是網站間的連動行為。</description>
+    </item>
+    
+  </channel>
+</rss>
