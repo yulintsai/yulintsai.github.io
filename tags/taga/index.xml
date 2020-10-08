@@ -13,7 +13,7 @@
       <pubDate>Wed, 09 Sep 2020 08:22:46 +0000</pubDate>
       
       <guid>https://yulintsai.github.io/post/day-1/</guid>
-      <description>大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！ 接下來我列出幾個未來30天內我會講的主題 Gitea  Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。 https://docs.gitea.io/zh-tw/comparison/
+      <description>大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！! 接下來我列出幾個未來30天內我會講的主題 Gitea  Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。 https://docs.gitea.io/zh-tw/comparison/
 初期是從 Gogs 發展而來
 Docker  想要使用虛擬化的技術，Docker絕對是必學，在基本DevOps上絕對是必用！ Docker主要就是讓你可以建置任何應用程式並運行在任何地方。它讓我們可以分離應用程式運行的基礎設施(infrastructure)，快速的建立、發佈應用程式。開發應用程式時也可以專注開發應用，而不用花太多的時間在安裝/運行環境的設置。 看完這幾句就知道為何說這是必學了！
 Drone  Drone 是以GO語言開發的CI/CD開源專案，使用簡單的YAML設定可以讓團隊導入CI/CD。

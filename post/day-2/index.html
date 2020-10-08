@@ -5,34 +5,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.76.2" />
 
-  <title>Day 2 &middot; RainForest Notes</title>
+  <title>[Day 2] Oops！Gitea - 建置與安裝 &middot; RainForest Notes</title>
 
   <meta name="description" content="" />
 
   
 
-<meta itemprop="name" content="Day 2">
-<meta itemprop="description" content="Cut out summary from your post content here.">
-<meta itemprop="datePublished" content="2020-10-08T17:13:01+08:00" />
-<meta itemprop="dateModified" content="2020-10-08T17:13:01+08:00" />
-<meta itemprop="wordCount" content="17">
+<meta itemprop="name" content="[Day 2] Oops！Gitea - 建置與安裝">
+<meta itemprop="description" content="在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
+那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明
+ 最低的系統需求就是一片便宜的樹莓派 (Raspberry Pi)。 如果用於團隊，建議使用 2 核 CPU 和 1GB 記憶體。
+ 以我個人的經驗的建議  使用人數 &lt; 20人 -&gt; e2-micro (2 個 vCPU，1 GB 記憶體) 使用人數 &gt; 20人 -&gt; e2-small (2 個 vCPU，2 GB 記憶體) 使用人數 &gt; 50人 -&gt; 請再自行評估唷！(本人目前還沒有經歷過)  再來就是硬碟使用的考量的部分 一開始可以先開小容量的硬碟，在GCP上硬碟擴充容量也很方便的。
+另外建議加掛SSD，將gitea掛進SSD內，原因下方Oops會說明。 Oops！隨著使用人數&amp;Repo的量增加，Gitea頁面回應時間會越來越慢。  若排除預算來考量的話，想體驗網頁回應時間約 &lt; 20ms的話，
+本人測試過提升CPU&amp;Memory來測試網頁回應時間是否有縮短，但沒看到明顯的差異。 差異最多的是，從把原本HHD的gitea目錄檔案搬遷到SSD硬碟下，可以很明顯的看到網頁回應時間大幅縮短。
+安裝  機器建置完成後，就可以來進行安裝gitea囉 因為本人是使用docker-compose來安裝的唷
+麻煩讀者們連到機器上安裝:
+ docker docker-compose 以上所需的套件，下載完成後，可以參考下方的docker-compose.yaml  version: &#34;3&#34; services: gitea: container_name: mygitea image: gitea/gitea:1.">
+<meta itemprop="datePublished" content="2020-09-10T09:39:47+00:00" />
+<meta itemprop="dateModified" content="2020-09-10T09:39:47+00:00" />
+<meta itemprop="wordCount" content="98">
 
 
 
-<meta itemprop="keywords" content="tagA,tagB," />
+<meta itemprop="keywords" content="gitea," />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Day 2"/>
-<meta name="twitter:description" content="Cut out summary from your post content here."/>
+<meta name="twitter:title" content="[Day 2] Oops！Gitea - 建置與安裝"/>
+<meta name="twitter:description" content="在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
+那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明
+ 最低的系統需求就是一片便宜的樹莓派 (Raspberry Pi)。 如果用於團隊，建議使用 2 核 CPU 和 1GB 記憶體。
+ 以我個人的經驗的建議  使用人數 &lt; 20人 -&gt; e2-micro (2 個 vCPU，1 GB 記憶體) 使用人數 &gt; 20人 -&gt; e2-small (2 個 vCPU，2 GB 記憶體) 使用人數 &gt; 50人 -&gt; 請再自行評估唷！(本人目前還沒有經歷過)  再來就是硬碟使用的考量的部分 一開始可以先開小容量的硬碟，在GCP上硬碟擴充容量也很方便的。
+另外建議加掛SSD，將gitea掛進SSD內，原因下方Oops會說明。 Oops！隨著使用人數&amp;Repo的量增加，Gitea頁面回應時間會越來越慢。  若排除預算來考量的話，想體驗網頁回應時間約 &lt; 20ms的話，
+本人測試過提升CPU&amp;Memory來測試網頁回應時間是否有縮短，但沒看到明顯的差異。 差異最多的是，從把原本HHD的gitea目錄檔案搬遷到SSD硬碟下，可以很明顯的看到網頁回應時間大幅縮短。
+安裝  機器建置完成後，就可以來進行安裝gitea囉 因為本人是使用docker-compose來安裝的唷
+麻煩讀者們連到機器上安裝:
+ docker docker-compose 以上所需的套件，下載完成後，可以參考下方的docker-compose.yaml  version: &#34;3&#34; services: gitea: container_name: mygitea image: gitea/gitea:1."/>
 
 
-<meta property="og:title" content="Day 2" />
-<meta property="og:description" content="Cut out summary from your post content here." />
+<meta property="og:title" content="[Day 2] Oops！Gitea - 建置與安裝" />
+<meta property="og:description" content="在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
+那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明
+ 最低的系統需求就是一片便宜的樹莓派 (Raspberry Pi)。 如果用於團隊，建議使用 2 核 CPU 和 1GB 記憶體。
+ 以我個人的經驗的建議  使用人數 &lt; 20人 -&gt; e2-micro (2 個 vCPU，1 GB 記憶體) 使用人數 &gt; 20人 -&gt; e2-small (2 個 vCPU，2 GB 記憶體) 使用人數 &gt; 50人 -&gt; 請再自行評估唷！(本人目前還沒有經歷過)  再來就是硬碟使用的考量的部分 一開始可以先開小容量的硬碟，在GCP上硬碟擴充容量也很方便的。
+另外建議加掛SSD，將gitea掛進SSD內，原因下方Oops會說明。 Oops！隨著使用人數&amp;Repo的量增加，Gitea頁面回應時間會越來越慢。  若排除預算來考量的話，想體驗網頁回應時間約 &lt; 20ms的話，
+本人測試過提升CPU&amp;Memory來測試網頁回應時間是否有縮短，但沒看到明顯的差異。 差異最多的是，從把原本HHD的gitea目錄檔案搬遷到SSD硬碟下，可以很明顯的看到網頁回應時間大幅縮短。
+安裝  機器建置完成後，就可以來進行安裝gitea囉 因為本人是使用docker-compose來安裝的唷
+麻煩讀者們連到機器上安裝:
+ docker docker-compose 以上所需的套件，下載完成後，可以參考下方的docker-compose.yaml  version: &#34;3&#34; services: gitea: container_name: mygitea image: gitea/gitea:1." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yulintsai.github.io/post/day-2/" />
-<meta property="article:published_time" content="2020-10-08T17:13:01+08:00" />
-<meta property="article:modified_time" content="2020-10-08T17:13:01+08:00" />
+<meta property="article:published_time" content="2020-09-10T09:39:47+00:00" />
+<meta property="article:modified_time" content="2020-09-10T09:39:47+00:00" />
 
 
 
@@ -81,6 +105,8 @@
       <h1>RainForest Notes</h1>
 
       
+      <p class="lead">My Notes</p>
+      
     </div>
 
     <nav>
@@ -101,16 +127,74 @@
 
   <main class="content container">
   <div class="post">
-  <h1>Day 2</h1>
+  <h1>[Day 2] Oops！Gitea - 建置與安裝</h1>
 
   <div class="post-date">
-    <time datetime="2020-10-08T17:13:01&#43;0800">Oct 8, 2020</time> &middot; 1 min read
+    <time datetime="2020-09-10T09:39:47Z">Sep 10, 2020</time> &middot; 1 min read
   </div>
 
-  <p>Cut out summary from your post content here.</p>
-<p>The remaining content of your post.</p>
-<h1 id="hello-world">Hello World</h1>
-<h2 id="test">test</h2>
+  <h3 id="在我們團隊中一切devops的運作的起點就是從gitops開始相信大家都有在使用好用的github另外想要私有專案公司內及個人使用的前提來挑選git服務我選擇了gitea主要是個人偏愛go語言還有安裝及升級比其他服務來得容易許多">在我們團隊中，一切<code>DevOps</code>的運作的起點就是從<code>GitOps</code>開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了<code>gitea</code>，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。</h3>
+<h3 id="另外gitea的開源專案也持續在維護及更新">另外<code>gitea</code>的開源專案也持續在維護及更新。</h3>
+<p><a href="https://docs.gitea.io/zh-tw/comparison/">gitea對於其他Git託管服務的比較圖</a></p>
+<p>那麼我們就開始來玩Gitea吧 <img src="/images/emoticon/emoticon37.gif" alt="/images/emoticon/emoticon37.gif"></p>
+<h1 id="vm建置-gcp">VM建置 (GCP)</h1>
+<hr>
+<p>首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。
+以下是官方的說明</p>
+<blockquote>
+<p>最低的系統需求就是一片便宜的樹莓派 (Raspberry Pi)。
+如果用於團隊，建議使用 2 核 CPU 和 1GB 記憶體。</p>
+</blockquote>
+<h3 id="以我個人的經驗的建議">以我個人的經驗的建議</h3>
+<ul>
+<li>使用人數 &lt; 20人 -&gt; e2-micro (2 個 vCPU，1 GB 記憶體)</li>
+<li>使用人數 &gt; 20人 -&gt; e2-small (2 個 vCPU，2 GB 記憶體)</li>
+<li>使用人數 &gt; 50人 -&gt; 請再自行評估唷！(本人目前還沒有經歷過)</li>
+</ul>
+<h3 id="再來就是硬碟使用的考量的部分">再來就是硬碟使用的考量的部分</h3>
+<p>一開始可以先開小容量的硬碟，在GCP上硬碟擴充容量也很方便的。</p>
+<h4 id="另外建議加掛ssd將gitea掛進ssd內原因下方oops會說明">另外建議加掛SSD，將gitea掛進SSD內，原因下方Oops會說明。</h4>
+<h2 id="oops隨著使用人數repo的量增加gitea頁面回應時間會越來越慢">Oops！隨著使用人數&amp;Repo的量增加，Gitea頁面回應時間會越來越慢。</h2>
+<hr>
+<p>若排除預算來考量的話，想體驗網頁回應時間約 &lt; 20ms的話，</p>
+<p>本人測試過提升CPU&amp;Memory來測試網頁回應時間是否有縮短，但沒看到明顯的差異。
+差異最多的是，從把原本HHD的gitea目錄檔案搬遷到SSD硬碟下，可以很明顯的看到網頁回應時間大幅縮短。</p>
+<h1 id="安裝">安裝</h1>
+<hr>
+<p>機器建置完成後，就可以來進行安裝gitea囉
+因為本人是使用docker-compose來安裝的唷</p>
+<p>麻煩讀者們連到機器上安裝:</p>
+<ul>
+<li><a href="https://docs.docker.com/engine/install/ubuntu/">docker</a></li>
+<li><a href="https://docs.docker.com/compose/install/">docker-compose</a>
+以上所需的套件，下載完成後，可以參考下方的docker-compose.yaml</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">version</span>: <span style="color:#e6db74">&#34;3&#34;</span>
+
+<span style="color:#f92672">services</span>:
+  <span style="color:#f92672">gitea</span>:
+    <span style="color:#f92672">container_name</span>: <span style="color:#ae81ff">mygitea</span>
+    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">gitea/gitea:1.12.3</span>
+    <span style="color:#f92672">restart</span>: <span style="color:#ae81ff">always</span>
+    <span style="color:#f92672">volumes</span>:
+      - <span style="color:#ae81ff">./:/data</span>
+    <span style="color:#f92672">ports</span>:
+      - <span style="color:#e6db74">&#34;3000:3000&#34;</span>
+      - <span style="color:#e6db74">&#34;22:22&#34;</span>
+    <span style="color:#f92672">environment</span>:
+      - <span style="color:#ae81ff">ROOT_URL=http://mygitea/</span>
+</code></pre></div><p>透過docker-compose 安裝gitea</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">docker-compose up -d
+</code></pre></div><p>使用docker-compose來安裝Gitea的原因之一是可以讓我非常無痛的更版。</p>
+<p>明天會有示範我都怎麼把gitea升版的</p>
+<h2 id="oops小心機器會自動被os更新重啟-imagesemoticonemoticon50gifimagesemoticonemoticon50gif">Oops！小心機器會自動被OS更新重啟 <img src="/images/emoticon/emoticon50.gif" alt="/images/emoticon/emoticon50.gif"></h2>
+<h4 id="之前有遇過vm機器在無預警下被重啟後來去翻systemlog才發現是機器內的os自動更新觸發的">之前有遇過VM機器在無預警下被重啟，後來去翻SystemLog才發現是機器內的OS自動更新觸發的。</h4>
+<p><strong>所以強烈建議將自動更新的設定關閉！</strong></p>
+<p>以下是linux範例</p>
+<pre><code>yum remove yum-cron
+</code></pre><p><strong>若是讀著們使用其他的OS，也建議查詢一下是否有自動更新的設定可以關閉！</strong></p>
+<h4 id="今日小結-目前我們已經把機器架設起來並且裝好gitea囉明天會來談如何備份與維護gitea">今日小結: 目前我們已經把機器架設起來，並且裝好Gitea囉，明天會來談如何備份與維護gitea。</h4>
+
 </div>
 
 

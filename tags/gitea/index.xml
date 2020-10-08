@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>gitea on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/gitea/</link>
+    <description>Recent content in gitea on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 10 Sep 2020 09:39:47 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/gitea/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 2] Oops！Gitea - 建置與安裝</title>
+      <link>https://yulintsai.github.io/post/day-2/</link>
+      <pubDate>Thu, 10 Sep 2020 09:39:47 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-2/</guid>
+      <description>在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
+那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明
+ 最低的系統需求就是一片便宜的樹莓派 (Raspberry Pi)。 如果用於團隊，建議使用 2 核 CPU 和 1GB 記憶體。
+ 以我個人的經驗的建議  使用人數 &amp;lt; 20人 -&amp;gt; e2-micro (2 個 vCPU，1 GB 記憶體) 使用人數 &amp;gt; 20人 -&amp;gt; e2-small (2 個 vCPU，2 GB 記憶體) 使用人數 &amp;gt; 50人 -&amp;gt; 請再自行評估唷！(本人目前還沒有經歷過)  再來就是硬碟使用的考量的部分 一開始可以先開小容量的硬碟，在GCP上硬碟擴充容量也很方便的。
+另外建議加掛SSD，將gitea掛進SSD內，原因下方Oops會說明。 Oops！隨著使用人數&amp;amp;Repo的量增加，Gitea頁面回應時間會越來越慢。  若排除預算來考量的話，想體驗網頁回應時間約 &amp;lt; 20ms的話，
+本人測試過提升CPU&amp;amp;Memory來測試網頁回應時間是否有縮短，但沒看到明顯的差異。 差異最多的是，從把原本HHD的gitea目錄檔案搬遷到SSD硬碟下，可以很明顯的看到網頁回應時間大幅縮短。
+安裝  機器建置完成後，就可以來進行安裝gitea囉 因為本人是使用docker-compose來安裝的唷
+麻煩讀者們連到機器上安裝:
+ docker docker-compose 以上所需的套件，下載完成後，可以參考下方的docker-compose.yaml  version: &amp;#34;3&amp;#34; services: gitea: container_name: mygitea image: gitea/gitea:1.</description>
+    </item>
+    
+  </channel>
+</rss>

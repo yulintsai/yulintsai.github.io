@@ -6,7 +6,16 @@
     <description>Recent content in Tags on RainForest Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 09 Sep 2020 08:22:46 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 10 Sep 2020 09:39:47 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>gitea</title>
+      <link>https://yulintsai.github.io/tags/gitea/</link>
+      <pubDate>Thu, 10 Sep 2020 09:39:47 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/tags/gitea/</guid>
+      <description></description>
+    </item>
+    
     <item>
       <title>tagA</title>
       <link>https://yulintsai.github.io/tags/taga/</link>
