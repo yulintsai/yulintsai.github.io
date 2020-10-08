@@ -6,41 +6,24 @@
     <description>Recent content in tagB on RainForest Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 08 Oct 2020 17:13:01 +0800</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/tagb/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 09 Sep 2020 08:22:46 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/tagb/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Day 1</title>
+      <title>[Day 1] Oops！前言</title>
       <link>https://yulintsai.github.io/post/day-1/</link>
-      <pubDate>Thu, 08 Oct 2020 17:13:01 +0800</pubDate>
+      <pubDate>Wed, 09 Sep 2020 08:22:46 +0000</pubDate>
       
       <guid>https://yulintsai.github.io/post/day-1/</guid>
-      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Day 2</title>
-      <link>https://yulintsai.github.io/post/day-2/</link>
-      <pubDate>Thu, 08 Oct 2020 17:13:01 +0800</pubDate>
-      
-      <guid>https://yulintsai.github.io/post/day-2/</guid>
-      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Day 3</title>
-      <link>https://yulintsai.github.io/post/day-3/</link>
-      <pubDate>Thu, 08 Oct 2020 17:13:01 +0800</pubDate>
-      
-      <guid>https://yulintsai.github.io/post/day-3/</guid>
-      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://yulintsai.github.io/post/hello-world/</link>
-      <pubDate>Thu, 08 Oct 2020 17:13:01 +0800</pubDate>
-      
-      <guid>https://yulintsai.github.io/post/hello-world/</guid>
-      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;</description>
+      <description>大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！ 接下來我列出幾個未來30天內我會講的主題 Gitea  Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。 https://docs.gitea.io/zh-tw/comparison/
+初期是從 Gogs 發展而來
+Docker  想要使用虛擬化的技術，Docker絕對是必學，在基本DevOps上絕對是必用！ Docker主要就是讓你可以建置任何應用程式並運行在任何地方。它讓我們可以分離應用程式運行的基礎設施(infrastructure)，快速的建立、發佈應用程式。開發應用程式時也可以專注開發應用，而不用花太多的時間在安裝/運行環境的設置。 看完這幾句就知道為何說這是必學了！
+Drone  Drone 是以GO語言開發的CI/CD開源專案，使用簡單的YAML設定可以讓團隊導入CI/CD。
+Helm  Helm 是 Kubernetes Chart 的管理工具，Kubernetes Chart 是一套預先組態的 Kubernetes 資源套件，是用來管理的部署檔很方便的工具，可以利用它做到叢集遷移，環境管理。
+golang  Go（又稱Golang）是Google開發的一種靜態強型別、編譯型、並發型，並具有垃圾回收功能的程式語言，於2012年發布出版。在現行的工作當中80%都使用此語言開發，所以我也會提到一些小插曲。
+gRPC  gRPC (gRPC Remote Procedure Calls) 是Google發起的一個開源遠端程序呼叫 (Remote procedure call) 系統。該系統基於 HTTP/2 協定傳輸，使用Protocol Buffers 作為介面描述語言。在K8s環境中，微服務的傳輸主要都靠它。
+Monitor &amp;amp; Notifications  介紹我如何用golang簡易監控Google Cloud Platform的突發事件與通知。
+GitOps  介紹近年來在Kubernetes筆者們提到的GitOps，以及大概的實作方式。
+DevSecOps  在RedHat的文章有提到
+ DevSecOps 意味著從一開始就要考慮應用和基礎架構的安全性；同時還要讓某些安全網關實現自動化，以防止 DevOps 工作流程變慢。選擇合適的工具來持續交付安全防護（例如在集成開發環境（IDE）中整合安全防護功能）有助於實現這些目標。但是有效的 DevOps 安全性需要的不僅是新工具。它更需要整個公司實現 DevOps 文化變革，從而儘早整合安全團隊的工作。</description>
     </item>
     
   </channel>

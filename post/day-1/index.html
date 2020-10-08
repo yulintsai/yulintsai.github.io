@@ -5,17 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="generator" content="Hugo 0.76.2" />
 
-  <title>Day 1 &middot; RainForest Notes</title>
+  <title>[Day 1] Oops！前言 &middot; RainForest Notes</title>
 
   <meta name="description" content="" />
 
   
 
-<meta itemprop="name" content="Day 1">
-<meta itemprop="description" content="Cut out summary from your post content here.">
-<meta itemprop="datePublished" content="2020-10-08T17:13:01+08:00" />
-<meta itemprop="dateModified" content="2020-10-08T17:13:01+08:00" />
-<meta itemprop="wordCount" content="17">
+<meta itemprop="name" content="[Day 1] Oops！前言">
+<meta itemprop="description" content="大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！ 接下來我列出幾個未來30天內我會講的主題 Gitea  Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。 https://docs.gitea.io/zh-tw/comparison/
+初期是從 Gogs 發展而來
+Docker  想要使用虛擬化的技術，Docker絕對是必學，在基本DevOps上絕對是必用！ Docker主要就是讓你可以建置任何應用程式並運行在任何地方。它讓我們可以分離應用程式運行的基礎設施(infrastructure)，快速的建立、發佈應用程式。開發應用程式時也可以專注開發應用，而不用花太多的時間在安裝/運行環境的設置。 看完這幾句就知道為何說這是必學了！
+Drone  Drone 是以GO語言開發的CI/CD開源專案，使用簡單的YAML設定可以讓團隊導入CI/CD。
+Helm  Helm 是 Kubernetes Chart 的管理工具，Kubernetes Chart 是一套預先組態的 Kubernetes 資源套件，是用來管理的部署檔很方便的工具，可以利用它做到叢集遷移，環境管理。
+golang  Go（又稱Golang）是Google開發的一種靜態強型別、編譯型、並發型，並具有垃圾回收功能的程式語言，於2012年發布出版。在現行的工作當中80%都使用此語言開發，所以我也會提到一些小插曲。
+gRPC  gRPC (gRPC Remote Procedure Calls) 是Google發起的一個開源遠端程序呼叫 (Remote procedure call) 系統。該系統基於 HTTP/2 協定傳輸，使用Protocol Buffers 作為介面描述語言。在K8s環境中，微服務的傳輸主要都靠它。
+Monitor &amp; Notifications  介紹我如何用golang簡易監控Google Cloud Platform的突發事件與通知。
+GitOps  介紹近年來在Kubernetes筆者們提到的GitOps，以及大概的實作方式。
+DevSecOps  在RedHat的文章有提到
+ DevSecOps 意味著從一開始就要考慮應用和基礎架構的安全性；同時還要讓某些安全網關實現自動化，以防止 DevOps 工作流程變慢。選擇合適的工具來持續交付安全防護（例如在集成開發環境（IDE）中整合安全防護功能）有助於實現這些目標。但是有效的 DevOps 安全性需要的不僅是新工具。它更需要整個公司實現 DevOps 文化變革，從而儘早整合安全團隊的工作。">
+<meta itemprop="datePublished" content="2020-09-09T08:22:46+00:00" />
+<meta itemprop="dateModified" content="2020-09-09T08:22:46+00:00" />
+<meta itemprop="wordCount" content="68">
 
 
 
@@ -23,16 +33,36 @@
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Day 1"/>
-<meta name="twitter:description" content="Cut out summary from your post content here."/>
+<meta name="twitter:title" content="[Day 1] Oops！前言"/>
+<meta name="twitter:description" content="大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！ 接下來我列出幾個未來30天內我會講的主題 Gitea  Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。 https://docs.gitea.io/zh-tw/comparison/
+初期是從 Gogs 發展而來
+Docker  想要使用虛擬化的技術，Docker絕對是必學，在基本DevOps上絕對是必用！ Docker主要就是讓你可以建置任何應用程式並運行在任何地方。它讓我們可以分離應用程式運行的基礎設施(infrastructure)，快速的建立、發佈應用程式。開發應用程式時也可以專注開發應用，而不用花太多的時間在安裝/運行環境的設置。 看完這幾句就知道為何說這是必學了！
+Drone  Drone 是以GO語言開發的CI/CD開源專案，使用簡單的YAML設定可以讓團隊導入CI/CD。
+Helm  Helm 是 Kubernetes Chart 的管理工具，Kubernetes Chart 是一套預先組態的 Kubernetes 資源套件，是用來管理的部署檔很方便的工具，可以利用它做到叢集遷移，環境管理。
+golang  Go（又稱Golang）是Google開發的一種靜態強型別、編譯型、並發型，並具有垃圾回收功能的程式語言，於2012年發布出版。在現行的工作當中80%都使用此語言開發，所以我也會提到一些小插曲。
+gRPC  gRPC (gRPC Remote Procedure Calls) 是Google發起的一個開源遠端程序呼叫 (Remote procedure call) 系統。該系統基於 HTTP/2 協定傳輸，使用Protocol Buffers 作為介面描述語言。在K8s環境中，微服務的傳輸主要都靠它。
+Monitor &amp; Notifications  介紹我如何用golang簡易監控Google Cloud Platform的突發事件與通知。
+GitOps  介紹近年來在Kubernetes筆者們提到的GitOps，以及大概的實作方式。
+DevSecOps  在RedHat的文章有提到
+ DevSecOps 意味著從一開始就要考慮應用和基礎架構的安全性；同時還要讓某些安全網關實現自動化，以防止 DevOps 工作流程變慢。選擇合適的工具來持續交付安全防護（例如在集成開發環境（IDE）中整合安全防護功能）有助於實現這些目標。但是有效的 DevOps 安全性需要的不僅是新工具。它更需要整個公司實現 DevOps 文化變革，從而儘早整合安全團隊的工作。"/>
 
 
-<meta property="og:title" content="Day 1" />
-<meta property="og:description" content="Cut out summary from your post content here." />
+<meta property="og:title" content="[Day 1] Oops！前言" />
+<meta property="og:description" content="大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！ 接下來我列出幾個未來30天內我會講的主題 Gitea  Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。 https://docs.gitea.io/zh-tw/comparison/
+初期是從 Gogs 發展而來
+Docker  想要使用虛擬化的技術，Docker絕對是必學，在基本DevOps上絕對是必用！ Docker主要就是讓你可以建置任何應用程式並運行在任何地方。它讓我們可以分離應用程式運行的基礎設施(infrastructure)，快速的建立、發佈應用程式。開發應用程式時也可以專注開發應用，而不用花太多的時間在安裝/運行環境的設置。 看完這幾句就知道為何說這是必學了！
+Drone  Drone 是以GO語言開發的CI/CD開源專案，使用簡單的YAML設定可以讓團隊導入CI/CD。
+Helm  Helm 是 Kubernetes Chart 的管理工具，Kubernetes Chart 是一套預先組態的 Kubernetes 資源套件，是用來管理的部署檔很方便的工具，可以利用它做到叢集遷移，環境管理。
+golang  Go（又稱Golang）是Google開發的一種靜態強型別、編譯型、並發型，並具有垃圾回收功能的程式語言，於2012年發布出版。在現行的工作當中80%都使用此語言開發，所以我也會提到一些小插曲。
+gRPC  gRPC (gRPC Remote Procedure Calls) 是Google發起的一個開源遠端程序呼叫 (Remote procedure call) 系統。該系統基於 HTTP/2 協定傳輸，使用Protocol Buffers 作為介面描述語言。在K8s環境中，微服務的傳輸主要都靠它。
+Monitor &amp; Notifications  介紹我如何用golang簡易監控Google Cloud Platform的突發事件與通知。
+GitOps  介紹近年來在Kubernetes筆者們提到的GitOps，以及大概的實作方式。
+DevSecOps  在RedHat的文章有提到
+ DevSecOps 意味著從一開始就要考慮應用和基礎架構的安全性；同時還要讓某些安全網關實現自動化，以防止 DevOps 工作流程變慢。選擇合適的工具來持續交付安全防護（例如在集成開發環境（IDE）中整合安全防護功能）有助於實現這些目標。但是有效的 DevOps 安全性需要的不僅是新工具。它更需要整個公司實現 DevOps 文化變革，從而儘早整合安全團隊的工作。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yulintsai.github.io/post/day-1/" />
-<meta property="article:published_time" content="2020-10-08T17:13:01+08:00" />
-<meta property="article:modified_time" content="2020-10-08T17:13:01+08:00" />
+<meta property="article:published_time" content="2020-09-09T08:22:46+00:00" />
+<meta property="article:modified_time" content="2020-09-09T08:22:46+00:00" />
 
 
 
@@ -81,6 +111,8 @@
       <h1>RainForest Notes</h1>
 
       
+      <p class="lead">My Notes</p>
+      
     </div>
 
     <nav>
@@ -101,16 +133,50 @@
 
   <main class="content container">
   <div class="post">
-  <h1>Day 1</h1>
+  <h1>[Day 1] Oops！前言</h1>
 
   <div class="post-date">
-    <time datetime="2020-10-08T17:13:01&#43;0800">Oct 8, 2020</time> &middot; 1 min read
+    <time datetime="2020-09-09T08:22:46Z">Sep 9, 2020</time> &middot; 1 min read
   </div>
 
-  <p>Cut out summary from your post content here.</p>
-<p>The remaining content of your post.</p>
-<h1 id="hello-world">Hello World</h1>
-<h2 id="test">test</h2>
+  <h3 id="大家好我是rainforest初次參與鐵人賽而參賽主要目的是想跟大家分享devops的經驗在每篇文章內我會盡量把遇過會覺得oops的事情分享在下方給各位大大們希望大家遠離這些oops避免踩雷當中有些做法是自己想的如有更棒的做法也歡迎共襄盛舉一起來討論謝謝imagesemoticonemoticon42gifimagesemoticonemoticon42gif">大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！<img src="/images/emoticon/emoticon42.gif" alt="/images/emoticon/emoticon42.gif"></h3>
+<h3 id="接下來我列出幾個未來30天內我會講的主題">接下來我列出幾個未來30天內我會講的主題</h3>
+<h3 id="giteahttpsgiteaioen-us"><a href="https://gitea.io/en-us/">Gitea</a></h3>
+<hr>
+<p>Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。
+<a href="https://docs.gitea.io/zh-tw/comparison/">https://docs.gitea.io/zh-tw/comparison/</a></p>
+<p>初期是從 Gogs 發展而來</p>
+<h3 id="dockerhttpsdocsdockercom"><a href="https://docs.docker.com/">Docker</a></h3>
+<hr>
+<p>想要使用虛擬化的技術，Docker絕對是必學，在基本DevOps上絕對是必用！
+Docker主要就是讓你可以建置任何應用程式並運行在任何地方。它讓我們可以分離應用程式運行的基礎設施(infrastructure)，快速的建立、發佈應用程式。開發應用程式時也可以專注開發應用，而不用花太多的時間在安裝/運行環境的設置。
+看完這幾句就知道為何說這是必學了！</p>
+<h3 id="dronehttpsdroneio"><a href="https://drone.io/">Drone</a></h3>
+<hr>
+<p>Drone 是以GO語言開發的CI/CD開源專案，使用簡單的YAML設定可以讓團隊導入CI/CD。</p>
+<h3 id="helmhttpshelmsh"><a href="https://helm.sh/">Helm</a></h3>
+<hr>
+<p>Helm 是 Kubernetes Chart 的管理工具，Kubernetes Chart 是一套預先組態的 Kubernetes 資源套件，是用來管理的部署檔很方便的工具，可以利用它做到叢集遷移，環境管理。</p>
+<h3 id="golanghttpsgolangorg"><a href="https://golang.org/">golang</a></h3>
+<hr>
+<p>Go（又稱Golang）是Google開發的一種靜態強型別、編譯型、並發型，並具有垃圾回收功能的程式語言，於2012年發布出版。在現行的工作當中80%都使用此語言開發，所以我也會提到一些小插曲。</p>
+<h3 id="grpchttpsgrpcio"><a href="https://grpc.io/">gRPC</a></h3>
+<hr>
+<p>gRPC (gRPC Remote Procedure Calls) 是Google發起的一個開源遠端程序呼叫 (Remote procedure call) 系統。該系統基於 HTTP/2 協定傳輸，使用Protocol Buffers 作為介面描述語言。在K8s環境中，微服務的傳輸主要都靠它。</p>
+<h3 id="monitor--notifications">Monitor &amp; Notifications</h3>
+<hr>
+<p>介紹我如何用golang簡易監控Google Cloud Platform的突發事件與通知。</p>
+<h3 id="gitops">GitOps</h3>
+<hr>
+<p>介紹近年來在Kubernetes筆者們提到的GitOps，以及大概的實作方式。</p>
+<h3 id="devsecops">DevSecOps</h3>
+<hr>
+<p>在RedHat的<a href="https://www.redhat.com/en/topics/devops/what-is-devsecops">文章</a>有提到</p>
+<blockquote>
+<p>DevSecOps 意味著從一開始就要考慮應用和基礎架構的安全性；同時還要讓某些安全網關實現自動化，以防止 DevOps 工作流程變慢。選擇合適的工具來持續交付安全防護（例如在集成開發環境（IDE）中整合安全防護功能）有助於實現這些目標。但是有效的 DevOps 安全性需要的不僅是新工具。它更需要整個公司實現 DevOps 文化變革，從而儘早整合安全團隊的工作。</p>
+</blockquote>
+<p>介紹在DevOps中，在哪些方面會去考慮到Sec(安全性)的部分</p>
+
 </div>
 
 
