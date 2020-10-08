@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Website of RainForest</title>
+    <title>Posts on RainForest&#39;s Blog</title>
     <link>https://yulintsai.github.io/post/</link>
-    <description>Recent content in Posts on Website of RainForest</description>
+    <description>Recent content in Posts on RainForest&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 08 Oct 2020 17:13:01 +0800</lastBuildDate><atom:link href="https://yulintsai.github.io/post/index.xml" rel="self" type="application/rss+xml" />
