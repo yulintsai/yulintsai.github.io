@@ -12,11 +12,11 @@
   
 
 <meta itemprop="name" content="[Day 30] Oops！最終章 DevSecOps">
-<meta itemprop="description" content="讓我們來小小回顧一下，這些三十天的我們的Oops文章
-Oops Gitea 系列  [Day 2] Oops！Gitea - 建置與安裝 [Day 3] Oops！Gitea - 備份與維護 [Day 4] Oops！Gitea - 超方便的功能及應用 [Day 5] Oops！Gitea - 防止git commit被偽造 [Day 6] Oops！Gitea - WebHook [Day 7] Oops！Gitea - Container log to ELK [Day 8] Oops！Gitea - 專案怎麼那麼肥！？  Oops Docker 系列  [Day 9] Oops！Docker - Image 瘦身大法  Oops Drone CI/CD 系列  [Day 10] Oops！Drone - 建置與安裝 [Day 11] Oops！Drone - 快速上手 [Day 12] Oops！Drone - 進階應用 [Day 13] Oops！Drone - Cron Jobs [Day 14] Oops！Drone - Pipelines Services [Day 27] Oops！CI/CD trigger WebHook to Telegram Bot  Oops Golang 系列  [Day 15] Oops！Golang - Linter [Day 16] Oops！Golang - CI/CD with Data Race Detector [Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！  Oops gRPC 系列  [Day 18] Oops！gRPC - 問題整理分享 [Day 19] Oops！gRPC - Protoc 容器化實作 [Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks  Oops Helm 系列  [Day 21] Oops！Helm - 起手式 [Day 22] Oops！Helm Template and Value [Day 23] Oops！Helm - 2 to 3 [Day 24] Oops！Helm - Can Not Upgrade Release [Day 25] Oops！Helm - 容器化實作 [Day 26] Oops！GitOps with Helm  Oops OpsDev 實作  [Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram  Oops DevOps  [Day 29] Oops！Block DevOps  Oops DevSecOps 最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。">
+<meta itemprop="description" content="Oops DevSecOps 最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。
+example:">
 <meta itemprop="datePublished" content="2020-10-08T12:00:02+00:00" />
 <meta itemprop="dateModified" content="2020-10-08T12:00:02+00:00" />
-<meta itemprop="wordCount" content="228">
+<meta itemprop="wordCount" content="33">
 
 
 
@@ -25,13 +25,13 @@ Oops Gitea 系列  [Day 2] Oops！Gitea - 建置與安裝 [Day 3] Oops！Gitea -
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="[Day 30] Oops！最終章 DevSecOps"/>
-<meta name="twitter:description" content="讓我們來小小回顧一下，這些三十天的我們的Oops文章
-Oops Gitea 系列  [Day 2] Oops！Gitea - 建置與安裝 [Day 3] Oops！Gitea - 備份與維護 [Day 4] Oops！Gitea - 超方便的功能及應用 [Day 5] Oops！Gitea - 防止git commit被偽造 [Day 6] Oops！Gitea - WebHook [Day 7] Oops！Gitea - Container log to ELK [Day 8] Oops！Gitea - 專案怎麼那麼肥！？  Oops Docker 系列  [Day 9] Oops！Docker - Image 瘦身大法  Oops Drone CI/CD 系列  [Day 10] Oops！Drone - 建置與安裝 [Day 11] Oops！Drone - 快速上手 [Day 12] Oops！Drone - 進階應用 [Day 13] Oops！Drone - Cron Jobs [Day 14] Oops！Drone - Pipelines Services [Day 27] Oops！CI/CD trigger WebHook to Telegram Bot  Oops Golang 系列  [Day 15] Oops！Golang - Linter [Day 16] Oops！Golang - CI/CD with Data Race Detector [Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！  Oops gRPC 系列  [Day 18] Oops！gRPC - 問題整理分享 [Day 19] Oops！gRPC - Protoc 容器化實作 [Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks  Oops Helm 系列  [Day 21] Oops！Helm - 起手式 [Day 22] Oops！Helm Template and Value [Day 23] Oops！Helm - 2 to 3 [Day 24] Oops！Helm - Can Not Upgrade Release [Day 25] Oops！Helm - 容器化實作 [Day 26] Oops！GitOps with Helm  Oops OpsDev 實作  [Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram  Oops DevOps  [Day 29] Oops！Block DevOps  Oops DevSecOps 最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。"/>
+<meta name="twitter:description" content="Oops DevSecOps 最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。
+example:"/>
 
 
 <meta property="og:title" content="[Day 30] Oops！最終章 DevSecOps" />
-<meta property="og:description" content="讓我們來小小回顧一下，這些三十天的我們的Oops文章
-Oops Gitea 系列  [Day 2] Oops！Gitea - 建置與安裝 [Day 3] Oops！Gitea - 備份與維護 [Day 4] Oops！Gitea - 超方便的功能及應用 [Day 5] Oops！Gitea - 防止git commit被偽造 [Day 6] Oops！Gitea - WebHook [Day 7] Oops！Gitea - Container log to ELK [Day 8] Oops！Gitea - 專案怎麼那麼肥！？  Oops Docker 系列  [Day 9] Oops！Docker - Image 瘦身大法  Oops Drone CI/CD 系列  [Day 10] Oops！Drone - 建置與安裝 [Day 11] Oops！Drone - 快速上手 [Day 12] Oops！Drone - 進階應用 [Day 13] Oops！Drone - Cron Jobs [Day 14] Oops！Drone - Pipelines Services [Day 27] Oops！CI/CD trigger WebHook to Telegram Bot  Oops Golang 系列  [Day 15] Oops！Golang - Linter [Day 16] Oops！Golang - CI/CD with Data Race Detector [Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！  Oops gRPC 系列  [Day 18] Oops！gRPC - 問題整理分享 [Day 19] Oops！gRPC - Protoc 容器化實作 [Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks  Oops Helm 系列  [Day 21] Oops！Helm - 起手式 [Day 22] Oops！Helm Template and Value [Day 23] Oops！Helm - 2 to 3 [Day 24] Oops！Helm - Can Not Upgrade Release [Day 25] Oops！Helm - 容器化實作 [Day 26] Oops！GitOps with Helm  Oops OpsDev 實作  [Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram  Oops DevOps  [Day 29] Oops！Block DevOps  Oops DevSecOps 最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。" />
+<meta property="og:description" content="Oops DevSecOps 最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。
+example:" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://yulintsai.github.io/post/day-30/" />
 <meta property="article:published_time" content="2020-10-08T12:00:02+00:00" />
@@ -113,63 +113,10 @@ Oops Gitea 系列  [Day 2] Oops！Gitea - 建置與安裝 [Day 3] Oops！Gitea -
   <h1>[Day 30] Oops！最終章 DevSecOps</h1>
 
   <div class="post-date">
-    <time datetime="2020-10-08T12:00:02Z">Oct 8, 2020</time> &middot; 2 min read
+    <time datetime="2020-10-08T12:00:02Z">Oct 8, 2020</time> &middot; 1 min read
   </div>
 
-  <p>讓我們來小小回顧一下，這些三十天的我們的Oops文章</p>
-<h2 id="oops-gitea-系列">Oops Gitea 系列</h2>
-<ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10234880">[Day 2] Oops！Gitea - 建置與安裝</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10234887">[Day 3] Oops！Gitea - 備份與維護</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10234895">[Day 4] Oops！Gitea - 超方便的功能及應用</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10234900">[Day 5] Oops！Gitea - 防止git commit被偽造</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10234903">[Day 6] Oops！Gitea - WebHook</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10234906">[Day 7] Oops！Gitea - Container log to ELK</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10234908">[Day 8] Oops！Gitea - 專案怎麼那麼肥！？</a></li>
-</ul>
-<h2 id="oops-docker-系列">Oops Docker 系列</h2>
-<ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10234909">[Day 9] Oops！Docker - Image 瘦身大法</a></li>
-</ul>
-<h2 id="oops-drone-cicd-系列">Oops Drone CI/CD 系列</h2>
-<ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235164">[Day 10] Oops！Drone - 建置與安裝</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235165">[Day 11] Oops！Drone - 快速上手</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10239694">[Day 12] Oops！Drone - 進階應用</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235166">[Day 13] Oops！Drone - Cron Jobs</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235167">[Day 14] Oops！Drone - Pipelines Services</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235182">[Day 27] Oops！CI/CD trigger WebHook to Telegram Bot</a></li>
-</ul>
-<h2 id="oops-golang-系列">Oops Golang 系列</h2>
-<ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235171">[Day 15] Oops！Golang - Linter</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235170">[Day 16] Oops！Golang - CI/CD with Data Race Detector</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235172">[Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！</a></li>
-</ul>
-<h2 id="oops-grpc-系列">Oops gRPC 系列</h2>
-<ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235666">[Day 18] Oops！gRPC - 問題整理分享</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235667">[Day 19] Oops！gRPC - Protoc 容器化實作</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10244882">[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks</a></li>
-</ul>
-<h2 id="oops-helm-系列">Oops Helm 系列</h2>
-<ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235174">[Day 21] Oops！Helm - 起手式</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235176">[Day 22] Oops！Helm Template and Value</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235177">[Day 23] Oops！Helm - 2 to 3</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235178">[Day 24] Oops！Helm - Can Not Upgrade Release</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10245164">[Day 25] Oops！Helm - 容器化實作</a></li>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235179">[Day 26] Oops！GitOps with Helm</a></li>
-</ul>
-<h2 id="oops-opsdev-實作">Oops OpsDev 實作</h2>
-<ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235180">[Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram</a></li>
-</ul>
-<h2 id="oops-devops">Oops DevOps</h2>
-<ul>
-<li><a href="https://ithelp.ithome.com.tw/articles/10235183">[Day 29] Oops！Block DevOps</a></li>
-</ul>
-<h2 id="oops-devsecops">Oops DevSecOps</h2>
+  <h2 id="oops-devsecops">Oops DevSecOps</h2>
 <p>最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。
 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。</p>
 <p>example:</p>
