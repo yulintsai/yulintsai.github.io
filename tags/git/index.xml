@@ -6,7 +6,17 @@
     <description>Recent content in git on RainForest Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 13 Sep 2020 12:00:32 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 27 Sep 2020 12:00:58 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/git/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 19] Oops！gRPC - Protoc 容器化實作</title>
+      <link>https://yulintsai.github.io/post/day-19/</link>
+      <pubDate>Sun, 27 Sep 2020 12:00:58 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-19/</guid>
+      <description>Oops 安裝 gRPC Protoc好麻煩！ 相信每個人在裝gRPC Protoc，可能都要花一些時間，還可能要處理一些環境問題，那就讓我們就把他封裝成容易讓大家用docker run起來build就好了！
+目的 Builder: 做一個image可以直接透過docker啟動container去幫你build proto檔案，使用者就不用再安裝proto+gprc了，只需要有裝docker就可以build proto檔案。</description>
+    </item>
+    
     <item>
       <title>[Day 5] Oops！Gitea - 防止git commit被偽造</title>
       <link>https://yulintsai.github.io/post/day-5/</link>

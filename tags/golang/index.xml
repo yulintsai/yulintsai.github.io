@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang  on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/golang/</link>
+    <description>Recent content in golang  on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 26 Sep 2020 11:19:59 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 18] Oops！gRPC - 問題整理分享</title>
+      <link>https://yulintsai.github.io/post/day-18/</link>
+      <pubDate>Sat, 26 Sep 2020 11:19:59 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-18/</guid>
+      <description>1. 接口參數異動 +- gRPC proto 參數 「移除」 Client + Server - Client +</description>
+    </item>
+    
+    <item>
+      <title>[Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！</title>
+      <link>https://yulintsai.github.io/post/day-17/</link>
+      <pubDate>Fri, 25 Sep 2020 10:02:25 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-17/</guid>
+      <description>是否有看過資源使用數據圖沒有降下來的情況？ 是否有遇過機器資源突然吃光的情況? 看code看不出原因的話！這時候就要需要進行效能分析了 說到效能分析就會想到 pprof 本篇文章，先帶大家使用一下golang的pprof套件 https://golang.org/pkg/net/http/pprof/
+檢測功能主要有   cpu: cpu profile 是在哪邊花費CPU的時間。</description>
+    </item>
+    
+    <item>
+      <title>[Day 16] Oops！Golang - CI/CD with Data Race Detector</title>
+      <link>https://yulintsai.github.io/post/day-16/</link>
+      <pubDate>Thu, 24 Sep 2020 11:26:43 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-16/</guid>
+      <description>Data Race 是個非常難找的錯誤類型之一
+ Data races are among the most common and hardest to debug types of bugs in concurrent systems.</description>
+    </item>
+    
+    <item>
+      <title>[Day 15] Oops！Golang - Linter</title>
+      <link>https://yulintsai.github.io/post/day-15/</link>
+      <pubDate>Wed, 23 Sep 2020 08:49:33 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-15/</guid>
+      <description>golangci-lint 是個針對Go語言多個Linters組合而成的Linter，是Linters的大集合。 導入linter在CI流程內，已成為常態，至少會警示你的code可能會遭遇哪些問題，安全性是否有疑慮等問題。
+著名使用者們 以下著名的公司也有使用golangci-lint
+ AWS Facebook Google Netflix Arduino Baidu Eclipse Foundation IBM Istio Percona Red Hat OpenShift Samsung Serverless ScyllaDB SoundCloud The New York Times WooCart Xiaomi Yahoo  在github查詢也有上萬個收尋結果唷！</description>
+    </item>
+    
+  </channel>
+</rss>

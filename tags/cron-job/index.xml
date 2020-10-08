@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>cron job on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/cron-job/</link>
+    <description>Recent content in cron job on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 21 Sep 2020 12:15:30 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/cron-job/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 13] Oops！Drone - Cron Jobs</title>
+      <link>https://yulintsai.github.io/post/day-13/</link>
+      <pubDate>Mon, 21 Sep 2020 12:15:30 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-13/</guid>
+      <description>今天來介紹Drone的排程設定功能及應用 有三個方法可以設定排程
+ From Drone Server UI From Drone CLI From Drone API  此篇主要用 From Drone Server UI &amp;amp; From Drone CLI 兩種方式設定來介紹</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.76.2" />
+
+  <title>[Day 12] Oops！Drone - 進階應用 &middot; RainForest Notes</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="[Day 12] Oops！Drone - 進階應用">
+<meta itemprop="description" content="大家早安 相信大家看完昨日的 [Day 11] Oops！Drone - 快速上手 ，並且練習完昨天的題目後，已經奠定了一些基礎，那麼我們今天來進階練習ㄧ下～ 這些練習或許在未來的某一天，你們可以在某個地方應用的到！進階練習 1.">
+<meta itemprop="datePublished" content="2020-09-20T00:08:59+00:00" />
+<meta itemprop="dateModified" content="2020-09-20T00:08:59+00:00" />
+<meta itemprop="wordCount" content="692">
+
+
+
+<meta itemprop="keywords" content="drone," />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Day 12] Oops！Drone - 進階應用"/>
+<meta name="twitter:description" content="大家早安 相信大家看完昨日的 [Day 11] Oops！Drone - 快速上手 ，並且練習完昨天的題目後，已經奠定了一些基礎，那麼我們今天來進階練習ㄧ下～ 這些練習或許在未來的某一天，你們可以在某個地方應用的到！進階練習 1."/>
+
+
+<meta property="og:title" content="[Day 12] Oops！Drone - 進階應用" />
+<meta property="og:description" content="大家早安 相信大家看完昨日的 [Day 11] Oops！Drone - 快速上手 ，並且練習完昨天的題目後，已經奠定了一些基礎，那麼我們今天來進階練習ㄧ下～ 這些練習或許在未來的某一天，你們可以在某個地方應用的到！進階練習 1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yulintsai.github.io/post/day-12/" />
+<meta property="article:published_time" content="2020-09-20T00:08:59+00:00" />
+<meta property="article:modified_time" content="2020-09-20T00:08:59+00:00" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+      
+
+      <h1>RainForest Notes</h1>
+
+      
+      <p class="lead">My Notes</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://yulintsai.github.io/">Home</a>
+        </li>
+        
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>[Day 12] Oops！Drone - 進階應用</h1>
+
+  <div class="post-date">
+    <time datetime="2020-09-20T00:08:59Z">Sep 20, 2020</time> &middot; 4 min read
+  </div>
+
+  <h3 id="大家早安">大家早安</h3>
+<p>相信大家看完昨日的 <a href="https://ithelp.ithome.com.tw/articles/10235165">[Day 11] Oops！Drone - 快速上手</a> ，並且練習完昨天的題目後，已經奠定了一些基礎，那麼我們今天來進階練習ㄧ下～
+這些練習或許在未來的某一天，你們可以在某個地方應用的到！<img src="/images/emoticon/emoticon37.gif" alt="/images/emoticon/emoticon37.gif"></p>
+<h2 id="進階練習">進階練習</h2>
+<h3 id="1volume">1.volume</h3>
+<p>第一個步驟就是定義主機的路徑。主機的路徑必須是絕對路徑。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">volumes</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mylog</span>
+  <span style="color:#f92672">host</span>:
+    <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/tmp</span>
+</code></pre></div><p>而下一步驟是配置 Pipeline步驟，將命名的主機路徑掛載到容器中。容器的路徑也必須是絕對路徑。</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">step_name</span>
+  <span style="color:#f92672">volumes</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mylog</span>
+    <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/tmp</span>
+</code></pre></div><p>以下是完整的示範</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">backend</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice make file</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">ls /tmp</span>
+    - <span style="color:#ae81ff">echo hello drone &gt; /tmp/hi.txt</span>
+
+  <span style="color:#f92672">volumes</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mylog</span>
+    <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/tmp</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">check volumes file</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">ls /tmp</span>
+  <span style="color:#f92672">volumes</span>:
+  - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mylog</span>
+    <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/tmp</span>
+
+<span style="color:#f92672">volumes</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">mylog</span>
+  <span style="color:#f92672">host</span>:
+    <span style="color:#f92672">path</span>: <span style="color:#ae81ff">/tmp</span>
+
+</code></pre></div><h3 id="2environment-使用">2.Environment 使用</h3>
+<p>設定參數在官網有<a href="https://docker-runner.docs.drone.io/configuration/environment/variables/">文件說明</a></p>
+<p>以下是我把全部的參數直接印出來的做法</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">backend</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">show environment</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo &#34;DRONE_BUILD_ACTION = ${DRONE_BUILD_ACTION}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_BUILD_CREATED = ${DRONE_BUILD_CREATED}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_BUILD_EVENT = ${DRONE_BUILD_EVENT}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_BUILD_FINISHED = ${DRONE_BUILD_FINISHED}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_BUILD_NUMBER = ${DRONE_BUILD_NUMBER}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_BUILD_PARENT = ${DRONE_BUILD_PARENT}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_BUILD_STARTED = ${DRONE_BUILD_STARTED}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_BUILD_STATUS = ${DRONE_BUILD_STATUS}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT = ${DRONE_COMMIT}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_AFTER = ${DRONE_COMMIT_AFTER}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_AUTHOR = ${DRONE_COMMIT_AUTHOR}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_AUTHOR_AVATAR = ${DRONE_COMMIT_AUTHOR_AVATAR}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_AUTHOR_EMAIL = ${DRONE_COMMIT_AUTHOR_EMAIL}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_AUTHOR_NAME = ${DRONE_COMMIT_AUTHOR_NAME}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_BEFORE = ${DRONE_COMMIT_BEFORE}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_BRANCH = ${DRONE_COMMIT_BRANCH}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_LINK = ${DRONE_COMMIT_LINK}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_MESSAGE = ${DRONE_COMMIT_MESSAGE}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_REF = ${DRONE_COMMIT_REF}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_COMMIT_SHA = ${DRONE_COMMIT_SHA}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_DEPLOY_TO = ${DRONE_DEPLOY_TO}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_FAILED_STAGES = ${DRONE_FAILED_STAGES}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_FAILED_STEPS = ${DRONE_FAILED_STEPS}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_GIT_HTTP_URL = ${DRONE_GIT_HTTP_URL}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_GIT_SSH_URL = ${DRONE_GIT_SSH_URL}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_PULL_REQUEST = ${DRONE_PULL_REQUEST}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REMOTE_URL = ${DRONE_REMOTE_URL}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REPO = ${DRONE_REPO}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REPO_BRANCH = ${DRONE_REPO_BRANCH}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REPO_LINK = ${DRONE_REPO_LINK}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REPO_NAME = ${DRONE_REPO_NAME}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REPO_NAMESPACE = ${DRONE_REPO_NAMESPACE}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REPO_OWNER = ${DRONE_REPO_OWNER}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REPO_PRIVATE = ${DRONE_REPO_PRIVATE}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REPO_SCM = ${DRONE_REPO_SCM}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_REPO_VISIBILITY = ${DRONE_REPO_VISIBILITY}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SEMVER = ${DRONE_SEMVER}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SEMVER_BUILD = {DRONE_SEMVER_BUILD}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SEMVER_ERROR = ${DRONE_SEMVER_ERROR}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SEMVER_MAJOR = ${DRONE_SEMVER_MAJOR}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SEMVER_MINOR = ${DRONE_SEMVER_MINOR}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SEMVER_PATCH = ${DRONE_SEMVER_PATCH}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SEMVER_PRERELEASE = ${DRONE_SEMVER_PRERELEASE}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SEMVER_SHORT = ${DRONE_SEMVER_SHORT}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SOURCE_BRANCH = ${DRONE_SOURCE_BRANCH}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_ARCH = ${DRONE_STAGE_ARCH}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_DEPENDS_ON = ${DRONE_STAGE_DEPENDS_ON}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_FINISHED = ${DRONE_STAGE_FINISHED}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_KIND = ${DRONE_STAGE_KIND}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_MACHINE = ${DRONE_STAGE_MACHINE}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_NAME = ${DRONE_STAGE_NAME}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_NUMBER = ${DRONE_STAGE_NUMBER}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_OS = ${DRONE_STAGE_OS}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_STARTED = ${DRONE_STAGE_STARTED}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_STATUS = ${DRONE_STAGE_STATUS}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_TYPE = ${DRONE_STAGE_TYPE}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STAGE_VARIANT = ${DRONE_STAGE_VARIANT}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STEP_NAME = ${DRONE_STEP_NAME}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_STEP_NUMBER = ${DRONE_STEP_NUMBER}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SYSTEM_HOST = ${DRONE_SYSTEM_HOST}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SYSTEM_HOSTNAME = ${DRONE_SYSTEM_HOSTNAME}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SYSTEM_PROTO = ${DRONE_SYSTEM_PROTO}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_SYSTEM_VERSION = ${DRONE_SYSTEM_VERSION}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_TAG = ${DRONE_TAG}&#34;</span>
+    - <span style="color:#ae81ff">echo &#34;DRONE_TARGET_BRANCH = ${DRONE_TARGET_BRANCH}&#34;</span>
+
+</code></pre></div><h3 id="3使用多個pipeline">3.使用多個Pipeline</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-01</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone pipeline-01</span>
+
+---
+
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-02</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone pipeline-02</span>
+
+---
+
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-03</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone pipeline-03</span>
+</code></pre></div><p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289HGxxOAj56p.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289HGxxOAj56p.png"></p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289jmMtGvIkDd.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289jmMtGvIkDd.png"></p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289ao5pf6ZzPm.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289ao5pf6ZzPm.png"></p>
+<h3 id="4depends_on">4.depends_on</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-01</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone pipeline-01</span>
+
+---
+
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-02</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone pipeline-02</span>
+
+<span style="color:#f92672">depends_on</span>:
+- <span style="color:#ae81ff">pipeline-01</span>
+
+---
+
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-03</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone pipeline-03</span>
+
+<span style="color:#f92672">depends_on</span>:
+- <span style="color:#ae81ff">pipeline-02</span>
+
+</code></pre></div><p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289Ls1DXBrnw5.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289Ls1DXBrnw5.png"></p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289Q12nd5E44I.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289Q12nd5E44I.png"></p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289NEh63HGKoq.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289NEh63HGKoq.png"></p>
+<h3 id="5-clone-disable">5. clone disable</h3>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-01</span>
+
+<span style="color:#f92672">clone</span>:
+  <span style="color:#f92672">disable</span>: <span style="color:#66d9ef">true</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone pipeline-01</span>
+
+---
+
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-02</span>
+
+<span style="color:#f92672">clone</span>:
+  <span style="color:#f92672">disable</span>: <span style="color:#66d9ef">true</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone pipeline-02</span>
+
+<span style="color:#f92672">depends_on</span>:
+- <span style="color:#ae81ff">pipeline-01</span>
+
+---
+
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-03</span>
+
+
+<span style="color:#f92672">clone</span>:
+  <span style="color:#f92672">disable</span>: <span style="color:#66d9ef">true</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">practice</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone pipeline-03</span>
+
+<span style="color:#f92672">depends_on</span>:
+- <span style="color:#ae81ff">pipeline-02</span>
+
+</code></pre></div><p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289e0LSBjGAxw.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289e0LSBjGAxw.png"></p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/201152898hvcYrDJKI.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/201152898hvcYrDJKI.png"></p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289wWUpCdMYYV.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289wWUpCdMYYV.png"></p>
+<h3 id="6ignore">6.ignore</h3>
+<p>如果要允許某個Step失敗而不使整個Pipeline失敗的話，可以在你需要允許可接受失敗的Step上面加上此設定。</p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289XsG76PykMs.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289XsG76PykMs.png"></p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289A4YIUtFevb.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289A4YIUtFevb.png"></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml">
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">pipeline</span>
+<span style="color:#f92672">type</span>: <span style="color:#ae81ff">docker</span>
+<span style="color:#f92672">name</span>: <span style="color:#ae81ff">pipeline-01</span>
+
+<span style="color:#f92672">clone</span>:
+  <span style="color:#f92672">disable</span>: <span style="color:#66d9ef">true</span>
+
+<span style="color:#f92672">steps</span>:
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">steps 01</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">failure</span>: <span style="color:#ae81ff">ignore</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone steps 01</span>
+    - <span style="color:#ae81ff">ls abcdefg</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">steps 02</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone steps 02</span>
+
+- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">steps 03</span>
+  <span style="color:#f92672">image</span>: <span style="color:#ae81ff">golang</span>
+  <span style="color:#f92672">commands</span>:
+    - <span style="color:#ae81ff">echo hello drone steps 03</span>
+
+</code></pre></div><p>效果就會如圖所示！
+<img src="https://ithelp.ithome.com.tw/upload/images/20200919/20115289GQU1859zmh.png" alt="https://ithelp.ithome.com.tw/upload/images/20200919/20115289GQU1859zmh.png"></p>
+<h2 id="oops-environment">Oops Environment</h2>
+<p>有些 Environment 可能不是如你預期的！
+有些 Environment 可能是空值！
+所以大家務必先行run看看，在你寫的 Pipeline內 Environment是否真的如你預期的取得，再導入到CI/CD流程內唷！</p>
+<h2 id="今日小結">今日小結</h2>
+<p>這兩日的練習相信大家對Drone的CI/CD設定已經有更深的了解，希望大家未來可以運用到往後的CI/CD的戰場上囉！<img src="/images/emoticon/emoticon58.gif" alt="/images/emoticon/emoticon58.gif"></p>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy;  2020
+
+    
+
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

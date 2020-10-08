@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>git-hook on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/git-hook/</link>
+    <description>Recent content in git-hook on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 28 Sep 2020 09:36:00 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/git-hook/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks</title>
+      <link>https://yulintsai.github.io/post/day-20/</link>
+      <pubDate>Mon, 28 Sep 2020 09:36:00 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-20/</guid>
+      <description>Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。
+git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit &amp;ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。</description>
+    </item>
+    
+  </channel>
+</rss>

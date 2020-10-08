@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>redis on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/redis/</link>
+    <description>Recent content in redis on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 22 Sep 2020 09:54:30 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/redis/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 14] Oops！Drone - Pipelines Services</title>
+      <link>https://yulintsai.github.io/post/day-14/</link>
+      <pubDate>Tue, 22 Sep 2020 09:54:30 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-14/</guid>
+      <description>在Pipelines需要使用DB或其他服務時怎麼辦？ 在CI/CD的流程中跑testing是很重要的，但有些test case需要使用DB或其他服務時就可以用Drone Pipelines Service設定把你需要的服務掛進來，例如:redis, mysql, nsq, cassandra or scylla &amp;hellip;。 只要相關服務支援使用image讓docker啟動，就能在Pipelines單獨起服務來使用唷！是不是非常非常方便～</description>
+    </item>
+    
+  </channel>
+</rss>

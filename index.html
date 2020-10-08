@@ -24,7 +24,7 @@
 <meta property="og:description" content="My Notes" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://yulintsai.github.io/" />
-<meta property="og:updated_time" content="2020-09-18T11:22:31+00:00" />
+<meta property="og:updated_time" content="2020-10-07T10:08:03+00:00" />
 
 
 
@@ -98,186 +98,206 @@
   <div class="posts">
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-10/">[Day 10] Oops！Drone - 建置與安裝</a>
+          <a href="https://yulintsai.github.io/post/day-29/">[Day 29] Oops！Block DevOps</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-18T11:22:31Z">Sep 18, 2020</time> &middot; 1 min read
+          <time datetime="2020-10-07T10:08:03Z">Oct 7, 2020</time> &middot; 1 min read
         </div>
 
         <div>
-          VM建置 (GCP)  如果要單獨一台VM，開來跑drone的朋友們看過來！ 在VM的規格，挑選上因為Drone會比較耗CPU 所以我推薦使用c2的CPU
-使用drone build image比較
+          How to BLOCK DevOps？ 要如何阻礙DevOps？ DevOps是一種文化，那就只要讓該文化導向毀滅之路就可以了。 以下介紹四點可能可以BLOCK DevOps的方式
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-10/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-29/">Read More</a>
         </div>
       </article>
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-9/">[Day 9] Oops！Docker - Image 瘦身大法</a>
+          <a href="https://yulintsai.github.io/post/day-28/">[Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-17T14:46:11Z">Sep 17, 2020</time> &middot; 1 min read
+          <time datetime="2020-10-06T10:35:03Z">Oct 6, 2020</time> &middot; 2 min read
         </div>
 
         <div>
-          今天為大家來簡單介紹Docker在17.05版本後，才支援的新功能。 Docker - Multiple Stage Builds 簡易說明：此功能可以同時操作多個Dockerfiles的行為，使得在build image上方便了許多 需求版本: Docker 17.
+          Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。
+流程 在 Google Cloud Status Dashboard 下方找到 JSON Feed，用golang寫個定時訪問的程式(小爬蟲) 當有任何事故發生搶在第一時間知道！並同時準備災害預演的流程。
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-9/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-28/">Read More</a>
         </div>
       </article>
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-8/">[Day 8] Oops！Gitea - 專案怎麼那麼肥！？</a>
+          <a href="https://yulintsai.github.io/post/day-26/">[Day 26] Oops！GitOps with Helm</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-16T09:43:32Z">Sep 16, 2020</time> &middot; 1 min read
+          <time datetime="2020-10-04T13:31:36Z">Oct 4, 2020</time> &middot; 2 min read
         </div>
 
         <div>
-          Oops 在跑CI/CD時，有遇過在 git clone step時非常之那麼久(超過1分鐘以上)！  先打開gitea進入此專案主頁 請大家注意到此專案的Size！
+          What is GitOps?  GitOps is a way to do Kubernetes cluster management and application delivery.
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-8/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-26/">Read More</a>
         </div>
       </article>
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-7/">[Day 7] Oops！Gitea - Container log to ELK</a>
+          <a href="https://yulintsai.github.io/post/day-25/">[Day 25] Oops！Helm - 容器化實作</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-15T09:20:02Z">Sep 15, 2020</time> &middot; 1 min read
+          <time datetime="2020-10-03T09:28:38Z">Oct 3, 2020</time> &middot; 1 min read
         </div>
 
         <div>
-          Q:要將gitea上面的Log輸出到ELK上做查詢分析要怎麼做呢？  由於我們裝gitea的方式是使用docker安裝的，那麼我們只需要透過Filebeat來幫我們將Log輸出到Elasticsearch 就好囉！
- Filebeat Filebeat是用於轉發和集中日誌數據的輕量級傳送程序。作為服務器上的代理安裝，Filebeat監視您指定的日誌文件或位置，收集日誌事件，並將它們轉發到Elasticsearch或 Logstash進行索引。
+          想容器化的原因 想要容器化原因跟[Day 19] Oops！gRPC - Protoc 容器化實作的原因一樣，主要是想幫同伴們減去安裝的成本，以及之後在CI/CD的時候可以直接透過build好的image操作，避免使用helm時遇到的版本差異問題。
+先建立映像檔 需要的套件：gcloud + helm3 helm3.
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-7/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-25/">Read More</a>
         </div>
       </article>
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-6/">[Day 6] Oops！Gitea - WebHook</a>
+          <a href="https://yulintsai.github.io/post/day-24/">[Day 24] Oops！Helm - Can Not Upgrade Release</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-14T09:37:54Z">Sep 14, 2020</time> &middot; 1 min read
+          <time datetime="2020-10-02T11:30:56Z">Oct 2, 2020</time> &middot; 1 min read
         </div>
 
         <div>
-          WebHook也算是在CI/CD也算是重要的環節之一，今日來帶大家如何讓Gitea觸發WebHook。
-首先，WebHook是什麼？
- 網頁開發中的Webhook（Webhook）是一種通過自訂回呼函式來增加或更改網頁表現的方法。這些回呼可被可能與原始網站或應用相關的第三方用戶及開發者儲存、修改與管理。術語「Webhook」由傑夫·林德塞（Jeff Lindsay）於2007年通過給電腦編程術語「掛鉤」（Hook）加上字首得來。 - Wiki
- 那麼用我的方式來說明的話，就是網站間的連動行為。
+          Oops 希望大家都不要遇到 Helm 2 -&gt; Helm 3 後 突然無法Upgrade Release
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-6/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-24/">Read More</a>
         </div>
       </article>
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-5/">[Day 5] Oops！Gitea - 防止git commit被偽造</a>
+          <a href="https://yulintsai.github.io/post/day-23/">[Day 23] Oops！Helm - 2 to 3</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-13T12:00:32Z">Sep 13, 2020</time> &middot; 2 min read
+          <time datetime="2020-10-01T11:22:54Z">Oct 1, 2020</time> &middot; 1 min read
         </div>
 
         <div>
-          在Gitea上使用GPG簽署 [Mac] 今天來教大家在gitea推commit上去時，防止git commit被偽造。
-為什麼會需要使用GPG簽署commit 在自己git的名字跟信箱都被公開的情況下，每個人的commit都可能被偽造。 要如何保證這些commit是由你的電腦下的呢？
-GPG(GNU Privacy Guard)也可以說是GnuPG，是一個加密工具，通常用來驗證身份 現在我們就要來將 git commit 加上 GPG 簽署，讓它 Push 到 Github 等代管平台後，別人可以確定這份 Commit 是你提交的 主要目的是避免git commit 被別人偽造 Homebrew 安裝  如果系統是 MacOS 的人，且有裝 Homebrew 就可以直接用它來安裝，套件名稱為 gnupg brew install gnupg 其他的OS或是沒有 Homebrew 的，可以直接到官方網站下載安裝檔。 官方網站載點
+          Helm 2 vs Helm 3 重點更新
+ Tiller移除 Chart的apiVersion更新為&quot;v2&quot;，目前還是能兼容&quot;v1&quot;版本。 不再需要初始化Helm(helm init)  為什麼要換helm 3？ 因為從[Day 21] Oops！Helm - 起手式來看與k8s版本比對表，會發現helm2越來越跟不上k8s最新版本，遲早要淘汰掉helm 2，加上helm 3已經發佈一段時間了，不如早點換上helm 3。
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-5/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-23/">Read More</a>
         </div>
       </article>
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-4/">[Day 4] Oops！Gitea - 超方便的功能及應用</a>
+          <a href="https://yulintsai.github.io/post/day-22/">[Day 22] Oops！Helm Template and Value</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-12T11:11:19Z">Sep 12, 2020</time> &middot; 1 min read
+          <time datetime="2020-09-30T10:07:46Z">Sep 30, 2020</time> &middot; 1 min read
         </div>
 
         <div>
-          超方便的功能 - 程式碼搜尋器 (預設是被關閉的) 預設關閉的原因是：
- Enables code search (uses a lot of disk space, about 6 times more than the repository size).
+          Helm的是Template + Value的組合部署檔，去k8s進行部署的 常見 Oops 分享 使用數字會噴錯  template匯入value的錯誤
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-4/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-22/">Read More</a>
         </div>
       </article>
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-3/">[Day 3] Oops！Gitea - 備份與維護</a>
+          <a href="https://yulintsai.github.io/post/day-21/">[Day 21] Oops！Helm - 起手式</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-11T10:18:46Z">Sep 11, 2020</time> &middot; 1 min read
+          <time datetime="2020-09-29T12:09:13Z">Sep 29, 2020</time> &middot; 1 min read
         </div>
 
         <div>
-          大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。
+          介紹  The package manager for Kubernetes
+ 身為一個 yaml工程師在Kubernetes的世界內，helm可以為我減輕大量維護yaml的負擔。
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-3/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-21/">Read More</a>
         </div>
       </article>
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-2/">[Day 2] Oops！Gitea - 建置與安裝</a>
+          <a href="https://yulintsai.github.io/post/day-20/">[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-10T09:39:47Z">Sep 10, 2020</time> &middot; 1 min read
+          <time datetime="2020-09-28T09:36:00Z">Sep 28, 2020</time> &middot; 1 min read
         </div>
 
         <div>
-          在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
-那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明
+          Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。
+git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit &ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-2/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-20/">Read More</a>
         </div>
       </article>
       <article class="post">
         <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-1/">[Day 1] Oops！前言</a>
+          <a href="https://yulintsai.github.io/post/day-19/">[Day 19] Oops！gRPC - Protoc 容器化實作</a>
         </h1>
 
         <div class="post-date">
-          <time datetime="2020-09-09T08:22:46Z">Sep 9, 2020</time> &middot; 1 min read
+          <time datetime="2020-09-27T12:00:58Z">Sep 27, 2020</time> &middot; 1 min read
         </div>
 
         <div>
-          大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！! 接下來我列出幾個未來30天內我會講的主題 Gitea  Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。 https://docs.
+          Oops 安裝 gRPC Protoc好麻煩！ 相信每個人在裝gRPC Protoc，可能都要花一些時間，還可能要處理一些環境問題，那就讓我們就把他封裝成容易讓大家用docker run起來build就好了！
+目的 Builder: 做一個image可以直接透過docker啟動container去幫你build proto檔案，使用者就不用再安裝proto+gprc了，只需要有裝docker就可以build proto檔案。
         </div>
 
         <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-1/">Read More</a>
+          <a href="https://yulintsai.github.io/post/day-19/">Read More</a>
         </div>
       </article>
   </div>
 
   
+<ul class="pagination">
+  <li class="page-item">
+    <a href="/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+  </li>
+  <li class="page-item disabled">
+    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+  </li>
+  <li class="page-item active">
+    <a class="page-link" href="/">1</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/page/2/">2</a>
+  </li>
+  <li class="page-item">
+    <a class="page-link" href="/page/3/">3</a>
+  </li>
+  <li class="page-item">
+    <a href="/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+  </li>
+  <li class="page-item">
+    <a href="/page/3/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+  </li>
+</ul>
 
 
   </main>

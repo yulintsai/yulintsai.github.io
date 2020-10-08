@@ -6,7 +6,180 @@
     <description>Recent content on RainForest Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 18 Sep 2020 11:22:31 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 07 Oct 2020 10:08:03 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 29] Oops！Block DevOps</title>
+      <link>https://yulintsai.github.io/post/day-29/</link>
+      <pubDate>Wed, 07 Oct 2020 10:08:03 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-29/</guid>
+      <description>How to BLOCK DevOps？ 要如何阻礙DevOps？ DevOps是一種文化，那就只要讓該文化導向毀滅之路就可以了。 以下介紹四點可能可以BLOCK DevOps的方式</description>
+    </item>
+    
+    <item>
+      <title>[Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram</title>
+      <link>https://yulintsai.github.io/post/day-28/</link>
+      <pubDate>Tue, 06 Oct 2020 10:35:03 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-28/</guid>
+      <description>Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。
+流程 在 Google Cloud Status Dashboard 下方找到 JSON Feed，用golang寫個定時訪問的程式(小爬蟲) 當有任何事故發生搶在第一時間知道！並同時準備災害預演的流程。</description>
+    </item>
+    
+    <item>
+      <title>[Day 26] Oops！GitOps with Helm</title>
+      <link>https://yulintsai.github.io/post/day-26/</link>
+      <pubDate>Sun, 04 Oct 2020 13:31:36 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-26/</guid>
+      <description>What is GitOps?  GitOps is a way to do Kubernetes cluster management and application delivery.</description>
+    </item>
+    
+    <item>
+      <title>[Day 25] Oops！Helm - 容器化實作</title>
+      <link>https://yulintsai.github.io/post/day-25/</link>
+      <pubDate>Sat, 03 Oct 2020 09:28:38 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-25/</guid>
+      <description>想容器化的原因 想要容器化原因跟[Day 19] Oops！gRPC - Protoc 容器化實作的原因一樣，主要是想幫同伴們減去安裝的成本，以及之後在CI/CD的時候可以直接透過build好的image操作，避免使用helm時遇到的版本差異問題。
+先建立映像檔 需要的套件：gcloud + helm3 helm3.</description>
+    </item>
+    
+    <item>
+      <title>[Day 24] Oops！Helm - Can Not Upgrade Release</title>
+      <link>https://yulintsai.github.io/post/day-24/</link>
+      <pubDate>Fri, 02 Oct 2020 11:30:56 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-24/</guid>
+      <description>Oops 希望大家都不要遇到 Helm 2 -&amp;gt; Helm 3 後 突然無法Upgrade Release</description>
+    </item>
+    
+    <item>
+      <title>[Day 23] Oops！Helm - 2 to 3</title>
+      <link>https://yulintsai.github.io/post/day-23/</link>
+      <pubDate>Thu, 01 Oct 2020 11:22:54 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-23/</guid>
+      <description>Helm 2 vs Helm 3 重點更新
+ Tiller移除 Chart的apiVersion更新為&amp;quot;v2&amp;quot;，目前還是能兼容&amp;quot;v1&amp;quot;版本。 不再需要初始化Helm(helm init)  為什麼要換helm 3？ 因為從[Day 21] Oops！Helm - 起手式來看與k8s版本比對表，會發現helm2越來越跟不上k8s最新版本，遲早要淘汰掉helm 2，加上helm 3已經發佈一段時間了，不如早點換上helm 3。</description>
+    </item>
+    
+    <item>
+      <title>[Day 22] Oops！Helm Template and Value</title>
+      <link>https://yulintsai.github.io/post/day-22/</link>
+      <pubDate>Wed, 30 Sep 2020 10:07:46 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-22/</guid>
+      <description>Helm的是Template + Value的組合部署檔，去k8s進行部署的 常見 Oops 分享 使用數字會噴錯  template匯入value的錯誤</description>
+    </item>
+    
+    <item>
+      <title>[Day 21] Oops！Helm - 起手式</title>
+      <link>https://yulintsai.github.io/post/day-21/</link>
+      <pubDate>Tue, 29 Sep 2020 12:09:13 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-21/</guid>
+      <description>介紹  The package manager for Kubernetes
+ 身為一個 yaml工程師在Kubernetes的世界內，helm可以為我減輕大量維護yaml的負擔。</description>
+    </item>
+    
+    <item>
+      <title>[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks</title>
+      <link>https://yulintsai.github.io/post/day-20/</link>
+      <pubDate>Mon, 28 Sep 2020 09:36:00 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-20/</guid>
+      <description>Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。
+git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit &amp;ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。</description>
+    </item>
+    
+    <item>
+      <title>[Day 19] Oops！gRPC - Protoc 容器化實作</title>
+      <link>https://yulintsai.github.io/post/day-19/</link>
+      <pubDate>Sun, 27 Sep 2020 12:00:58 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-19/</guid>
+      <description>Oops 安裝 gRPC Protoc好麻煩！ 相信每個人在裝gRPC Protoc，可能都要花一些時間，還可能要處理一些環境問題，那就讓我們就把他封裝成容易讓大家用docker run起來build就好了！
+目的 Builder: 做一個image可以直接透過docker啟動container去幫你build proto檔案，使用者就不用再安裝proto+gprc了，只需要有裝docker就可以build proto檔案。</description>
+    </item>
+    
+    <item>
+      <title>[Day 18] Oops！gRPC - 問題整理分享</title>
+      <link>https://yulintsai.github.io/post/day-18/</link>
+      <pubDate>Sat, 26 Sep 2020 11:19:59 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-18/</guid>
+      <description>1. 接口參數異動 +- gRPC proto 參數 「移除」 Client + Server - Client +</description>
+    </item>
+    
+    <item>
+      <title>[Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！</title>
+      <link>https://yulintsai.github.io/post/day-17/</link>
+      <pubDate>Fri, 25 Sep 2020 10:02:25 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-17/</guid>
+      <description>是否有看過資源使用數據圖沒有降下來的情況？ 是否有遇過機器資源突然吃光的情況? 看code看不出原因的話！這時候就要需要進行效能分析了 說到效能分析就會想到 pprof 本篇文章，先帶大家使用一下golang的pprof套件 https://golang.org/pkg/net/http/pprof/
+檢測功能主要有   cpu: cpu profile 是在哪邊花費CPU的時間。</description>
+    </item>
+    
+    <item>
+      <title>[Day 16] Oops！Golang - CI/CD with Data Race Detector</title>
+      <link>https://yulintsai.github.io/post/day-16/</link>
+      <pubDate>Thu, 24 Sep 2020 11:26:43 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-16/</guid>
+      <description>Data Race 是個非常難找的錯誤類型之一
+ Data races are among the most common and hardest to debug types of bugs in concurrent systems.</description>
+    </item>
+    
+    <item>
+      <title>[Day 15] Oops！Golang - Linter</title>
+      <link>https://yulintsai.github.io/post/day-15/</link>
+      <pubDate>Wed, 23 Sep 2020 08:49:33 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-15/</guid>
+      <description>golangci-lint 是個針對Go語言多個Linters組合而成的Linter，是Linters的大集合。 導入linter在CI流程內，已成為常態，至少會警示你的code可能會遭遇哪些問題，安全性是否有疑慮等問題。
+著名使用者們 以下著名的公司也有使用golangci-lint
+ AWS Facebook Google Netflix Arduino Baidu Eclipse Foundation IBM Istio Percona Red Hat OpenShift Samsung Serverless ScyllaDB SoundCloud The New York Times WooCart Xiaomi Yahoo  在github查詢也有上萬個收尋結果唷！</description>
+    </item>
+    
+    <item>
+      <title>[Day 14] Oops！Drone - Pipelines Services</title>
+      <link>https://yulintsai.github.io/post/day-14/</link>
+      <pubDate>Tue, 22 Sep 2020 09:54:30 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-14/</guid>
+      <description>在Pipelines需要使用DB或其他服務時怎麼辦？ 在CI/CD的流程中跑testing是很重要的，但有些test case需要使用DB或其他服務時就可以用Drone Pipelines Service設定把你需要的服務掛進來，例如:redis, mysql, nsq, cassandra or scylla &amp;hellip;。 只要相關服務支援使用image讓docker啟動，就能在Pipelines單獨起服務來使用唷！是不是非常非常方便～</description>
+    </item>
+    
+    <item>
+      <title>[Day 13] Oops！Drone - Cron Jobs</title>
+      <link>https://yulintsai.github.io/post/day-13/</link>
+      <pubDate>Mon, 21 Sep 2020 12:15:30 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-13/</guid>
+      <description>今天來介紹Drone的排程設定功能及應用 有三個方法可以設定排程
+ From Drone Server UI From Drone CLI From Drone API  此篇主要用 From Drone Server UI &amp;amp; From Drone CLI 兩種方式設定來介紹</description>
+    </item>
+    
+    <item>
+      <title>[Day 12] Oops！Drone - 進階應用</title>
+      <link>https://yulintsai.github.io/post/day-12/</link>
+      <pubDate>Sun, 20 Sep 2020 00:08:59 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-12/</guid>
+      <description>大家早安 相信大家看完昨日的 [Day 11] Oops！Drone - 快速上手 ，並且練習完昨天的題目後，已經奠定了一些基礎，那麼我們今天來進階練習ㄧ下～ 這些練習或許在未來的某一天，你們可以在某個地方應用的到！進階練習 1.</description>
+    </item>
+    
+    <item>
+      <title>[Day 11] Oops！Drone - 快速上手</title>
+      <link>https://yulintsai.github.io/post/day-11/</link>
+      <pubDate>Sat, 19 Sep 2020 00:46:43 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-11/</guid>
+      <description>想要讓Drone設定的好，就要把基礎先打好！ 認識設定值   kind - 定義對象屬性的類別 目前有</description>
+    </item>
+    
     <item>
       <title>[Day 10] Oops！Drone - 建置與安裝</title>
       <link>https://yulintsai.github.io/post/day-10/</link>
@@ -15,6 +188,26 @@
       <guid>https://yulintsai.github.io/post/day-10/</guid>
       <description>VM建置 (GCP)  如果要單獨一台VM，開來跑drone的朋友們看過來！ 在VM的規格，挑選上因為Drone會比較耗CPU 所以我推薦使用c2的CPU
 使用drone build image比較</description>
+    </item>
+    
+    <item>
+      <title>[Day 27] Oops！CI/CD trigger WebHook to Telegram Bot</title>
+      <link>https://yulintsai.github.io/post/day-27/</link>
+      <pubDate>Fri, 18 Sep 2020 11:22:31 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-27/</guid>
+      <description>前言 有時候我們在CI/CD流程進行中時，通常都是被動告知的，那如果想要透過Pipeline主動告知要怎麼做呢？ 我們在第六天[Day 6] Oops！Gitea - WebHook有介紹到Gitea搭配WebHook的做法，而如果要在CI/CD上觸發WebHook去通知Telegram要怎麼做呢？
+Telegram Bot API 首先讓我們來瞧瞧Telegram Bot API，Telegram Bot提供API可以直接打Telegram Bot API發送訊息到指定的聊天室</description>
+    </item>
+    
+    <item>
+      <title>[Day 30] Oops！最終章 DevSecOps</title>
+      <link>https://yulintsai.github.io/post/day-30/</link>
+      <pubDate>Fri, 18 Sep 2020 11:22:31 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-30/</guid>
+      <description>Oops 終於到了最終章了!!! 讓我們來小小回顧一下，這些三十天的我們的Oops文章
+Oops Gitea 系列  [Day 2] Oops！Gitea - 建置與安裝 [Day 3] Oops！Gitea - 備份與維護 [Day 4] Oops！Gitea - 超方便的功能及應用 [Day 5] Oops！Gitea - 防止git commit被偽造 [Day 6] Oops！Gitea - WebHook [Day 7] Oops！Gitea - Container log to ELK [Day 8] Oops！Gitea - 專案怎麼那麼肥！？  Oops Docker 系列  [Day 9] Oops！Docker - Image 瘦身大法  Oops Drone CI/CD 系列  [Day 10] Oops！Drone - 建置與安裝 [Day 11] Oops！Drone - 快速上手 [Day 12] Oops！Drone - 進階應用 [Day 13] Oops！Drone - Cron Jobs [Day 14] Oops！Drone - Pipelines Services [Day 27] Oops！CI/CD trigger WebHook to Telegram Bot  Oops Golang 系列  [Day 15] Oops！Golang - Linter [Day 16] Oops！Golang - CI/CD with Data Race Detector [Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！  Oops gRPC 系列  [Day 18] Oops！gRPC - 問題整理分享 [Day 19] Oops！gRPC - Protoc 容器化實作 [Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks  Oops Helm 系列  [Day 21] Oops！Helm - 起手式 [Day 22] Oops！Helm Template and Value [Day 23] Oops！Helm - 2 to 3 [Day 24] Oops！Helm - Can Not Upgrade Release [Day 25] Oops！Helm - 容器化實作 [Day 26] Oops！GitOps with Helm  Oops OpsDev 實作  [Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram  Oops DevOps  [Day 29] Oops！Block DevOps  Oops DevSecOps 最後一天來講 DevSecOps or SecDevOps的一些概念，當在開發或維運的時候都是非常需要重視資訊安全。 可以利用CI/CD工具來幫助你們整個DevOps上更加安全。</description>
     </item>
     
     <item>

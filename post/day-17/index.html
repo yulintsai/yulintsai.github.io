@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="generator" content="Hugo 0.76.2" />
+
+  <title>[Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！ &middot; RainForest Notes</title>
+
+  <meta name="description" content="" />
+
+  
+
+<meta itemprop="name" content="[Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！">
+<meta itemprop="description" content="是否有看過資源使用數據圖沒有降下來的情況？ 是否有遇過機器資源突然吃光的情況? 看code看不出原因的話！這時候就要需要進行效能分析了 說到效能分析就會想到 pprof 本篇文章，先帶大家使用一下golang的pprof套件 https://golang.org/pkg/net/http/pprof/
+檢測功能主要有   cpu: cpu profile 是在哪邊花費CPU的時間。">
+<meta itemprop="datePublished" content="2020-09-25T10:02:25+00:00" />
+<meta itemprop="dateModified" content="2020-09-25T10:02:25+00:00" />
+<meta itemprop="wordCount" content="372">
+
+
+
+<meta itemprop="keywords" content="golang,pprof,flame graph," />
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！"/>
+<meta name="twitter:description" content="是否有看過資源使用數據圖沒有降下來的情況？ 是否有遇過機器資源突然吃光的情況? 看code看不出原因的話！這時候就要需要進行效能分析了 說到效能分析就會想到 pprof 本篇文章，先帶大家使用一下golang的pprof套件 https://golang.org/pkg/net/http/pprof/
+檢測功能主要有   cpu: cpu profile 是在哪邊花費CPU的時間。"/>
+
+
+<meta property="og:title" content="[Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！" />
+<meta property="og:description" content="是否有看過資源使用數據圖沒有降下來的情況？ 是否有遇過機器資源突然吃光的情況? 看code看不出原因的話！這時候就要需要進行效能分析了 說到效能分析就會想到 pprof 本篇文章，先帶大家使用一下golang的pprof套件 https://golang.org/pkg/net/http/pprof/
+檢測功能主要有   cpu: cpu profile 是在哪邊花費CPU的時間。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yulintsai.github.io/post/day-17/" />
+<meta property="article:published_time" content="2020-09-25T10:02:25+00:00" />
+<meta property="article:modified_time" content="2020-09-25T10:02:25+00:00" />
+
+
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/print.css"
+        media="print">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/poole.css">
+
+  <link type="text/css"
+        rel="stylesheet"
+        href="/css/hyde.css">
+
+  
+
+
+  
+
+  <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
+        crossorigin="anonymous" />
+
+  <link rel="apple-touch-icon-precomposed"
+        sizes="144x144"
+        href="/apple-touch-icon-144-precomposed.png">
+
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  </head>
+<body>
+  <aside class="sidebar">
+  <div class="container">
+    <div class="sidebar-about">
+      
+        
+      
+
+      <h1>RainForest Notes</h1>
+
+      
+      <p class="lead">My Notes</p>
+      
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li>
+          <a href="https://yulintsai.github.io/">Home</a>
+        </li>
+        
+      </ul>
+    </nav>
+
+    <section class="social-icons">
+      
+    </section>
+  </div>
+</aside>
+
+
+  <main class="content container">
+  <div class="post">
+  <h1>[Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！</h1>
+
+  <div class="post-date">
+    <time datetime="2020-09-25T10:02:25Z">Sep 25, 2020</time> &middot; 2 min read
+  </div>
+
+  <h2 id="是否有看過資源使用數據圖沒有降下來的情況">是否有看過資源使用數據圖沒有降下來的情況？</h2>
+<h2 id="是否有遇過機器資源突然吃光的情況">是否有遇過機器資源突然吃光的情況?</h2>
+<h3 id="看code看不出原因的話這時候就要需要進行效能分析了">看code看不出原因的話！這時候就要需要進行效能分析了</h3>
+<p>說到效能分析就會想到 <strong>pprof</strong>
+本篇文章，先帶大家使用一下golang的pprof套件
+<a href="https://golang.org/pkg/net/http/pprof/">https://golang.org/pkg/net/http/pprof/</a></p>
+<h3 id="檢測功能主要有">檢測功能主要有</h3>
+<ul>
+<li>
+<p>cpu: cpu profile 是在哪邊花費CPU的時間。</p>
+</li>
+<li>
+<p>heap: 記憶體當下以及過去的使用情況，並檢查記憶體洩漏</p>
+</li>
+</ul>
+<blockquote>
+<p>「Heap」 由於是動態配置的記憶體空間，其存活時間不規律不可預測的，故需使用者自行回收空間。
+所以若GC處理不好，就會發現有程序狂吃記憶體的情況。</p>
+</blockquote>
+<p>threadcreate: Thread的線程</p>
+<ul>
+<li>goroutine: Goroutine profile 報告所有目前 goroutine的 stack追蹤。</li>
+</ul>
+<blockquote>
+<p>「stack」用來儲存 Value Types (Primitives)的地方，其特性是 LIFO （後進先出），用來儲存物件的 stack 與 run-time 的 call stack 運作原理是一樣的，run-time 的 stack frame 包含了：
+Parameters：函數的參數
+Return address：回傳位址，當func執行完，從哪行code繼續執行
+Local variables：區域變數
+來源 - <a href="https://medium.com/joe-tsai/stack-vs-heap-b4bd500667cd">Stack vs. Heap</a></p>
+</blockquote>
+<ul>
+<li>
+<p>block: block profile 顯示 goroutine在哪裡阻塞（含timer channels）的等待。預設是關閉的，需要使用 runtime.SetBlockProfileRate 去開啟它。</p>
+</li>
+<li>
+<p>mutex: Mutex profile 報告鎖的競爭. 如果您認為由於互斥鎖爭用而無法充分利用CPU. 預設是關閉的，需要使用 runtime.SetMutexProfileFraction 去開啟它。</p>
+</li>
+</ul>
+<h2 id="先教大家使用">先教大家使用</h2>
+<p>請大家在code內掛出一個http服務</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;localhost:6060&#34;</span>, <span style="color:#66d9ef">nil</span>)
+</code></pre></div><p>example</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-golang" data-lang="golang"><span style="color:#f92672">package</span> <span style="color:#a6e22e">main</span>
+
+<span style="color:#f92672">import</span> (
+	<span style="color:#e6db74">&#34;fmt&#34;</span>
+	<span style="color:#e6db74">&#34;net/http&#34;</span>
+	<span style="color:#a6e22e">_</span> <span style="color:#e6db74">&#34;net/http/pprof&#34;</span>
+)
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">main</span>() {
+	<span style="color:#a6e22e">_</span>, <span style="color:#a6e22e">err</span> <span style="color:#f92672">:=</span> <span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#e6db74">&#34;Hello, ithome&#34;</span>)
+	<span style="color:#66d9ef">if</span> <span style="color:#a6e22e">err</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">nil</span> {
+		<span style="color:#a6e22e">gorace</span>()
+	}
+}
+
+<span style="color:#66d9ef">func</span> <span style="color:#a6e22e">gorace</span>() {
+	<span style="color:#a6e22e">c</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">chan</span> <span style="color:#66d9ef">bool</span>)
+	<span style="color:#a6e22e">m</span> <span style="color:#f92672">:=</span> make(<span style="color:#66d9ef">map</span>[<span style="color:#66d9ef">string</span>]<span style="color:#66d9ef">string</span>)
+	<span style="color:#66d9ef">go</span> <span style="color:#66d9ef">func</span>() {
+		<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;1&#34;</span>] = <span style="color:#e6db74">&#34;a&#34;</span> <span style="color:#75715e">// First conflicting access.
+</span><span style="color:#75715e"></span>		<span style="color:#a6e22e">c</span> <span style="color:#f92672">&lt;-</span> <span style="color:#66d9ef">true</span>
+	}()
+	<span style="color:#a6e22e">m</span>[<span style="color:#e6db74">&#34;2&#34;</span>] = <span style="color:#e6db74">&#34;b&#34;</span> <span style="color:#75715e">// Second conflicting access.
+</span><span style="color:#75715e"></span>	<span style="color:#f92672">&lt;-</span><span style="color:#a6e22e">c</span>
+	<span style="color:#66d9ef">for</span> <span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">m</span> {
+		<span style="color:#a6e22e">fmt</span>.<span style="color:#a6e22e">Println</span>(<span style="color:#a6e22e">k</span>, <span style="color:#a6e22e">v</span>)
+	}
+
+	<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">ListenAndServe</span>(<span style="color:#e6db74">&#34;localhost:6060&#34;</span>, <span style="color:#66d9ef">nil</span>)
+}
+
+</code></pre></div><p>打開 http://localhost:6060</p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200924/20115289foyOyE8HNS.png" alt="https://ithelp.ithome.com.tw/upload/images/20200924/20115289foyOyE8HNS.png"></p>
+<p>有簡易的Web可以看報告</p>
+<h3 id="若想看圖表">若想看圖表</h3>
+<pre><code>go tool pprof http://localhost:6060/debug/pprof/heap
+</code></pre><p>這時候會產生一個檔案 Saved profile in XXXX</p>
+<pre><code>Fetching profile over HTTP from http://localhost:6060/debug/pprof/heap
+Saved profile in /Users/$mypc/pprof/pprof.alloc_objects.alloc_space.inuse_objects.inuse_space.001.pb.gz
+Type: inuse_space
+Time: Sep 23, 2020 at 4:50pm (CST)
+Entering interactive mode (type &quot;help&quot; for commands, &quot;o&quot; for options)
+(pprof)
+</code></pre><p>使用 pprof UI介面打開檔案</p>
+<pre><code>go tool pprof -http=:8080 /Users/$mypc/pprof/pprof.alloc_objects.alloc_space.inuse_objects.inuse_space.001.pb.gz 
+
+</code></pre><pre><code>Serving web UI on http://localhost:8080
+</code></pre><p>使用瀏覽器開啟 http://localhost:8080</p>
+<p>Graph
+<img src="https://ithelp.ithome.com.tw/upload/images/20200924/20115289nGWr46TEId.png" alt="https://ithelp.ithome.com.tw/upload/images/20200924/20115289nGWr46TEId.png"></p>
+<p><img src="https://ithelp.ithome.com.tw/upload/images/20200924/20115289yE00Yiwtfp.png" alt="https://ithelp.ithome.com.tw/upload/images/20200924/20115289yE00Yiwtfp.png"></p>
+<p>Flame Graph
+<img src="https://ithelp.ithome.com.tw/upload/images/20200924/20115289zg9w6tMbCm.png" alt="https://ithelp.ithome.com.tw/upload/images/20200924/20115289zg9w6tMbCm.png"></p>
+<p>Top
+<img src="https://ithelp.ithome.com.tw/upload/images/20200924/20115289YUrOQGbL2K.png" alt="https://ithelp.ithome.com.tw/upload/images/20200924/20115289YUrOQGbL2K.png"></p>
+<p>Source
+<img src="https://ithelp.ithome.com.tw/upload/images/20200924/20115289jSTFYE0kS4.png" alt="https://ithelp.ithome.com.tw/upload/images/20200924/20115289jSTFYE0kS4.png"></p>
+<h2 id="oops---效能會有差">Oops - 效能會有差</h2>
+<blockquote>
+<p>Can I profile my production services?</p>
+<p>Yes. It is safe to profile programs in production, but enabling some profiles (e.g. the CPU profile) adds cost. You should expect to see performance downgrade. The performance penalty can be estimated by measuring the overhead of the profiler before turning it on in production.</p>
+</blockquote>
+<blockquote>
+<p>You may want to periodically profile your production services. Especially in a system with many replicas of a single process, selecting a random replica periodically is a safe option. Select a production process, profile it for X seconds for every Y seconds and save the results for visualization and analysis; then repeat periodically. Results may be manually and/or automatically reviewed to find problems. Collection of profiles can interfere with each other, so it is recommended to collect only a single profile at a time.</p>
+</blockquote>
+<p>要開啟pprof及相關參數的話，請注意！文件說明上有提到建議一次只收集一種 profile，設定的參數可能會相互干擾。</p>
+<h2 id="oops---flame-graph火焰圖是什麼">Oops - Flame Graph(火焰圖)，是什麼？</h2>
+<p>真的非常多人不懂火焰圖怎麼看！
+由於我還沒完整的整理起火焰圖的說明，所以我推薦幾篇好文給各位參考</p>
+<ul>
+<li><a href="https://cloud.google.com/profiler/docs/concepts-flame">Flame graphs - Google Cloud Doc</a></li>
+<li><a href="https://queue.acm.org/detail.cfm?id=2927301">The Flame Graph - Brendan Gregg, Netflix</a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2017/09/flame-graph.html">如何读懂火焰图？ - 阮一峰</a></li>
+</ul>
+<h2 id="今日小結">今日小結</h2>
+<p>pprof 真的是效能分析的利器，希望大家學習並熟悉它！
+雖然需要花很長時間，但它真的是能幫你找出吃資源的猛獸，也是效能優化的好助手。<img src="/images/emoticon/emoticon12.gif" alt="/images/emoticon/emoticon12.gif"></p>
+
+</div>
+
+
+  </main>
+
+  <footer>
+  <div>
+    &copy;  2020
+
+    
+
+    
+  </div>
+</footer>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
+          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
+          crossorigin="anonymous"></script>
+
+  
+
+  
+</body>
+</html>

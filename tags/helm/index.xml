@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>helm on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/helm/</link>
+    <description>Recent content in helm on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 04 Oct 2020 13:31:36 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/helm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 26] Oops！GitOps with Helm</title>
+      <link>https://yulintsai.github.io/post/day-26/</link>
+      <pubDate>Sun, 04 Oct 2020 13:31:36 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-26/</guid>
+      <description>What is GitOps?  GitOps is a way to do Kubernetes cluster management and application delivery.</description>
+    </item>
+    
+    <item>
+      <title>[Day 25] Oops！Helm - 容器化實作</title>
+      <link>https://yulintsai.github.io/post/day-25/</link>
+      <pubDate>Sat, 03 Oct 2020 09:28:38 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-25/</guid>
+      <description>想容器化的原因 想要容器化原因跟[Day 19] Oops！gRPC - Protoc 容器化實作的原因一樣，主要是想幫同伴們減去安裝的成本，以及之後在CI/CD的時候可以直接透過build好的image操作，避免使用helm時遇到的版本差異問題。
+先建立映像檔 需要的套件：gcloud + helm3 helm3.</description>
+    </item>
+    
+    <item>
+      <title>[Day 24] Oops！Helm - Can Not Upgrade Release</title>
+      <link>https://yulintsai.github.io/post/day-24/</link>
+      <pubDate>Fri, 02 Oct 2020 11:30:56 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-24/</guid>
+      <description>Oops 希望大家都不要遇到 Helm 2 -&amp;gt; Helm 3 後 突然無法Upgrade Release</description>
+    </item>
+    
+    <item>
+      <title>[Day 23] Oops！Helm - 2 to 3</title>
+      <link>https://yulintsai.github.io/post/day-23/</link>
+      <pubDate>Thu, 01 Oct 2020 11:22:54 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-23/</guid>
+      <description>Helm 2 vs Helm 3 重點更新
+ Tiller移除 Chart的apiVersion更新為&amp;quot;v2&amp;quot;，目前還是能兼容&amp;quot;v1&amp;quot;版本。 不再需要初始化Helm(helm init)  為什麼要換helm 3？ 因為從[Day 21] Oops！Helm - 起手式來看與k8s版本比對表，會發現helm2越來越跟不上k8s最新版本，遲早要淘汰掉helm 2，加上helm 3已經發佈一段時間了，不如早點換上helm 3。</description>
+    </item>
+    
+    <item>
+      <title>[Day 22] Oops！Helm Template and Value</title>
+      <link>https://yulintsai.github.io/post/day-22/</link>
+      <pubDate>Wed, 30 Sep 2020 10:07:46 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-22/</guid>
+      <description>Helm的是Template + Value的組合部署檔，去k8s進行部署的 常見 Oops 分享 使用數字會噴錯  template匯入value的錯誤</description>
+    </item>
+    
+    <item>
+      <title>[Day 21] Oops！Helm - 起手式</title>
+      <link>https://yulintsai.github.io/post/day-21/</link>
+      <pubDate>Tue, 29 Sep 2020 12:09:13 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-21/</guid>
+      <description>介紹  The package manager for Kubernetes
+ 身為一個 yaml工程師在Kubernetes的世界內，helm可以為我減輕大量維護yaml的負擔。</description>
+    </item>
+    
+  </channel>
+</rss>

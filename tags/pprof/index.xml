@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pprof on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/pprof/</link>
+    <description>Recent content in pprof on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 25 Sep 2020 10:02:25 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/pprof/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 17] Oops！Golang - 讓我們來抓出吃資源的兇手！</title>
+      <link>https://yulintsai.github.io/post/day-17/</link>
+      <pubDate>Fri, 25 Sep 2020 10:02:25 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-17/</guid>
+      <description>是否有看過資源使用數據圖沒有降下來的情況？ 是否有遇過機器資源突然吃光的情況? 看code看不出原因的話！這時候就要需要進行效能分析了 說到效能分析就會想到 pprof 本篇文章，先帶大家使用一下golang的pprof套件 https://golang.org/pkg/net/http/pprof/
+檢測功能主要有   cpu: cpu profile 是在哪邊花費CPU的時間。</description>
+    </item>
+    
+  </channel>
+</rss>
