@@ -107,9 +107,6 @@
 
         <div>
           大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。
-這裡有推薦的文章，在下方，大家有興趣可以進去點閱唷！
-https://blog.tw.cloud-ace.com/compute-engine/how-to-backup-your-gcp-vm-easily-and-automatically-with-snapshot-schedule/
-維護  Gitea升版SOP流程  請至Github，查看該版本的Change Log 請至DockerHub，查看是否有該版本的image 請預先告知有使用Gitea的同事 公窗群組也請告知執行「時間點」及「原因」 執行升版前一刻，也請公窗告知開始動作 編輯docker-compose.yml 將image更改版本 下指令更新 docker-compose up -d 確認網頁是否恢復可以正常使用 左下角有版本號可以確認此更版是否正確  透過群組告知同事可以使用了，並請同事試試看若有異常需要再評估是否退版！ 重要：需要觀察 CPU&amp;Memory 線圖與以往有差異！若此版本造成機器loading太重需要退版！退版流程與升版一致。  VM規格升級SOP流程  請預先告知，有使用此台VM相關服務的同事 公窗群組也請告知執行「時間點」及「原因」 執行升級前一刻，也請公窗告知開始動作 下指令 docker-compose stop 暫停docker-compose相關服務 VM 關機 (可透過GCP介面操作) VM 調整規格 (可透過GCP介面操作) 啟動VM (可透過GCP介面操作) 進入VM 下指令 docker-compose up -d 確認網頁及相關服務是否恢復可以正常使用 透過群組告知同事可以使用了，並請同事試試看，若有異常需要再趕緊查看原因 重要：需要觀察 CPU&amp;Memory 線圖與預期結果是否相同！  以上的流程，每一個步驟都是以同事溝通為考量為優先，希望大家都能互相體諒。 大家可以參考參考，不一定要照做唷～也歡迎留言提出其他很棒的做法 Oops 升版造成的錯誤 若升版前或升版後沒告知到同事，可能會造成別人原本使用，會有異動或者錯誤。 原本的功能都可能無法使用。所以勢必做到告知的動作！
         </div>
 
         <div class="read-more-link">
@@ -129,12 +126,6 @@ https://blog.tw.cloud-ace.com/compute-engine/how-to-backup-your-gcp-vm-easily-an
           在我們團隊中，一切DevOps的運作的起點就是從GitOps開始，相信大家都有在使用好用的github，另外想要私有專案、公司內及個人使用的前提來挑選git服務，我選擇了gitea，主要是個人偏愛Go語言，還有安裝及升級比其他服務來得容易許多。 另外gitea的開源專案也持續在維護及更新。 gitea對於其他Git託管服務的比較圖
 那麼我們就開始來玩Gitea吧 VM建置 (GCP)  首先要考量的是VM的配置，當然配置上也要考慮到之後的維護。 以下是官方的說明
  最低的系統需求就是一片便宜的樹莓派 (Raspberry Pi)。 如果用於團隊，建議使用 2 核 CPU 和 1GB 記憶體。
- 以我個人的經驗的建議  使用人數 &lt; 20人 -&gt; e2-micro (2 個 vCPU，1 GB 記憶體) 使用人數 &gt; 20人 -&gt; e2-small (2 個 vCPU，2 GB 記憶體) 使用人數 &gt; 50人 -&gt; 請再自行評估唷！(本人目前還沒有經歷過)  再來就是硬碟使用的考量的部分 一開始可以先開小容量的硬碟，在GCP上硬碟擴充容量也很方便的。
-另外建議加掛SSD，將gitea掛進SSD內，原因下方Oops會說明。 Oops！隨著使用人數&amp;Repo的量增加，Gitea頁面回應時間會越來越慢。  若排除預算來考量的話，想體驗網頁回應時間約 &lt; 20ms的話，
-本人測試過提升CPU&amp;Memory來測試網頁回應時間是否有縮短，但沒看到明顯的差異。 差異最多的是，從把原本HHD的gitea目錄檔案搬遷到SSD硬碟下，可以很明顯的看到網頁回應時間大幅縮短。
-安裝  機器建置完成後，就可以來進行安裝gitea囉 因為本人是使用docker-compose來安裝的唷
-麻煩讀者們連到機器上安裝:
- docker docker-compose 以上所需的套件，下載完成後，可以參考下方的docker-compose.yaml  version: &#34;3&#34; services: gitea: container_name: mygitea image: gitea/gitea:1.
         </div>
 
         <div class="read-more-link">
@@ -151,17 +142,7 @@ https://blog.tw.cloud-ace.com/compute-engine/how-to-backup-your-gcp-vm-easily-an
         </div>
 
         <div>
-          大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！! 接下來我列出幾個未來30天內我會講的主題 Gitea  Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。 https://docs.gitea.io/zh-tw/comparison/
-初期是從 Gogs 發展而來
-Docker  想要使用虛擬化的技術，Docker絕對是必學，在基本DevOps上絕對是必用！ Docker主要就是讓你可以建置任何應用程式並運行在任何地方。它讓我們可以分離應用程式運行的基礎設施(infrastructure)，快速的建立、發佈應用程式。開發應用程式時也可以專注開發應用，而不用花太多的時間在安裝/運行環境的設置。 看完這幾句就知道為何說這是必學了！
-Drone  Drone 是以GO語言開發的CI/CD開源專案，使用簡單的YAML設定可以讓團隊導入CI/CD。
-Helm  Helm 是 Kubernetes Chart 的管理工具，Kubernetes Chart 是一套預先組態的 Kubernetes 資源套件，是用來管理的部署檔很方便的工具，可以利用它做到叢集遷移，環境管理。
-golang  Go（又稱Golang）是Google開發的一種靜態強型別、編譯型、並發型，並具有垃圾回收功能的程式語言，於2012年發布出版。在現行的工作當中80%都使用此語言開發，所以我也會提到一些小插曲。
-gRPC  gRPC (gRPC Remote Procedure Calls) 是Google發起的一個開源遠端程序呼叫 (Remote procedure call) 系統。該系統基於 HTTP/2 協定傳輸，使用Protocol Buffers 作為介面描述語言。在K8s環境中，微服務的傳輸主要都靠它。
-Monitor &amp; Notifications  介紹我如何用golang簡易監控Google Cloud Platform的突發事件與通知。
-GitOps  介紹近年來在Kubernetes筆者們提到的GitOps，以及大概的實作方式。
-DevSecOps  在RedHat的文章有提到
- DevSecOps 意味著從一開始就要考慮應用和基礎架構的安全性；同時還要讓某些安全網關實現自動化，以防止 DevOps 工作流程變慢。選擇合適的工具來持續交付安全防護（例如在集成開發環境（IDE）中整合安全防護功能）有助於實現這些目標。但是有效的 DevOps 安全性需要的不僅是新工具。它更需要整個公司實現 DevOps 文化變革，從而儘早整合安全團隊的工作。
+          大家好，我是Rainforest，初次參與鐵人賽，而參賽主要目的是想跟大家分享DevOps的經驗，在每篇文章內，我會盡量把遇過會覺得Oops的事情分享在下方給各位大大們，希望大家遠離這些Oops！避免踩雷！當中有些做法是自己想的如有更棒的做法，也歡迎共襄盛舉一起來討論。謝謝！! 接下來我列出幾個未來30天內我會講的主題 Gitea  Gitea 是一個可自行託管的 Git 服務。你可以拿 GitHub、Bitbucket 或 Gitlab 來比較看看。 https://docs.
         </div>
 
         <div class="read-more-link">

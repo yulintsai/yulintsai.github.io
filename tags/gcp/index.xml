@@ -13,10 +13,7 @@
       <pubDate>Fri, 11 Sep 2020 10:18:46 +0000</pubDate>
       
       <guid>https://yulintsai.github.io/post/day-3/</guid>
-      <description>大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。
-這裡有推薦的文章，在下方，大家有興趣可以進去點閱唷！
-https://blog.tw.cloud-ace.com/compute-engine/how-to-backup-your-gcp-vm-easily-and-automatically-with-snapshot-schedule/
-維護  Gitea升版SOP流程  請至Github，查看該版本的Change Log 請至DockerHub，查看是否有該版本的image 請預先告知有使用Gitea的同事 公窗群組也請告知執行「時間點」及「原因」 執行升版前一刻，也請公窗告知開始動作 編輯docker-compose.yml 將image更改版本 下指令更新 docker-compose up -d 確認網頁是否恢復可以正常使用 左下角有版本號可以確認此更版是否正確  透過群組告知同事可以使用了，並請同事試試看若有異常需要再評估是否退版！ 重要：需要觀察 CPU&amp;amp;Memory 線圖與以往有差異！若此版本造成機器loading太重需要退版！退版流程與升版一致。  VM規格升級SOP流程  請預先告知，有使用此台VM相關服務的同事 公窗群組也請告知執行「時間點」及「原因」 執行升級前一刻，也請公窗告知開始動作 下指令 docker-compose stop 暫停docker-compose相關服務 VM 關機 (可透過GCP介面操作) VM 調整規格 (可透過GCP介面操作) 啟動VM (可透過GCP介面操作) 進入VM 下指令 docker-compose up -d 確認網頁及相關服務是否恢復可以正常使用 透過群組告知同事可以使用了，並請同事試試看，若有異常需要再趕緊查看原因 重要：需要觀察 CPU&amp;amp;Memory 線圖與預期結果是否相同！  以上的流程，每一個步驟都是以同事溝通為考量為優先，希望大家都能互相體諒。 大家可以參考參考，不一定要照做唷～也歡迎留言提出其他很棒的做法 Oops 升版造成的錯誤 若升版前或升版後沒告知到同事，可能會造成別人原本使用，會有異動或者錯誤。 原本的功能都可能無法使用。所以勢必做到告知的動作！</description>
+      <description>大家早安，今天要談的是gitea的備份與維護 備份  由於上篇我們把gitea安裝在GCP VM上，所以這篇主要是從GCP VM上的角度來看待備份與維護的事項唷！ 備份的策略，每個團隊都有些不同，沒有一定要怎麼做，需要團隊成員的討論。 本人是使用GCP上的快照功能進行備份，請至快照設定介面請點擊 建立快照排程，為了不影響同事使用gitea，盡可能設定在同事沒上班的時間進行快照。 快照週期&amp;amp;保留日期設定，可以與同事們討論後設定，這些參數會影響到，若真的要從快照恢復的話，大家都能接受的時間點。</description>
     </item>
     
   </channel>
