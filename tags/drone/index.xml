@@ -6,14 +6,15 @@
     <description>Recent content in drone on RainForest Notes</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 06 Oct 2020 10:35:03 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/drone/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 05 Oct 2020 11:35:59 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/drone/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram</title>
-      <link>https://yulintsai.github.io/post/day-28/</link>
-      <pubDate>Tue, 06 Oct 2020 10:35:03 +0000</pubDate>
+      <title>[Day 27] Oops！CI/CD trigger WebHook to Telegram Bot</title>
+      <link>https://yulintsai.github.io/post/day-27/</link>
+      <pubDate>Mon, 05 Oct 2020 11:35:59 +0000</pubDate>
       
-      <guid>https://yulintsai.github.io/post/day-28/</guid>
-      <description>Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。 所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。</description>
+      <guid>https://yulintsai.github.io/post/day-27/</guid>
+      <description>前言 有時候我們在CI/CD流程進行中時，通常都是被動告知的，那如果想要透過Pipeline主動告知要怎麼做呢？ 我們在第六天[Day 6] Oops！Gitea - WebHook有介紹到Gitea搭配WebHook的做法，而如果要在CI/CD上觸發WebHook去通知Telegram要怎麼做呢？
+Telegram Bot API 首先讓我們來瞧瞧Telegram Bot API，Telegram Bot提供API可以直接打Telegram Bot API發送訊息到指定的聊天室</description>
     </item>
     
     <item>
@@ -80,16 +81,6 @@
       <guid>https://yulintsai.github.io/post/day-10/</guid>
       <description>VM建置 (GCP)  如果要單獨一台VM，開來跑drone的朋友們看過來！ 在VM的規格，挑選上因為Drone會比較耗CPU 所以我推薦使用c2的CPU
 使用drone build image比較</description>
-    </item>
-    
-    <item>
-      <title>[Day 27] Oops！CI/CD trigger WebHook to Telegram Bot</title>
-      <link>https://yulintsai.github.io/post/day-27/</link>
-      <pubDate>Fri, 18 Sep 2020 11:22:31 +0000</pubDate>
-      
-      <guid>https://yulintsai.github.io/post/day-27/</guid>
-      <description>前言 有時候我們在CI/CD流程進行中時，通常都是被動告知的，那如果想要透過Pipeline主動告知要怎麼做呢？ 我們在第六天[Day 6] Oops！Gitea - WebHook有介紹到Gitea搭配WebHook的做法，而如果要在CI/CD上觸發WebHook去通知Telegram要怎麼做呢？
-Telegram Bot API 首先讓我們來瞧瞧Telegram Bot API，Telegram Bot提供API可以直接打Telegram Bot API發送訊息到指定的聊天室</description>
     </item>
     
   </channel>

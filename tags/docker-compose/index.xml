@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker-compose on RainForest Notes</title>
+    <link>https://yulintsai.github.io/tags/docker-compose/</link>
+    <description>Recent content in docker-compose on RainForest Notes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 06 Oct 2020 10:35:03 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/docker-compose/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Day 28] Oops！Golang - Google Cloud Status Monitor with Telegram</title>
+      <link>https://yulintsai.github.io/post/day-28/</link>
+      <pubDate>Tue, 06 Oct 2020 10:35:03 +0000</pubDate>
+      
+      <guid>https://yulintsai.github.io/post/day-28/</guid>
+      <description>Oops 出於Ops的原因開發去 之前就有遇過當Google Cloud 有發生狀況而我們使用者都不知道的情況。 所以想透過在本機or其他業者的VM來監控Google Cloud Status，避免Google整個掛掉後，沒任何通知。</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -162,6 +162,24 @@ example:
       </article>
       <article class="post">
         <h1 class="post-title">
+          <a href="https://yulintsai.github.io/post/day-27/">[Day 27] Oops！CI/CD trigger WebHook to Telegram Bot</a>
+        </h1>
+
+        <div class="post-date">
+          <time datetime="2020-10-05T11:35:59Z">Oct 5, 2020</time> &middot; 1 min read
+        </div>
+
+        <div>
+          前言 有時候我們在CI/CD流程進行中時，通常都是被動告知的，那如果想要透過Pipeline主動告知要怎麼做呢？ 我們在第六天[Day 6] Oops！Gitea - WebHook有介紹到Gitea搭配WebHook的做法，而如果要在CI/CD上觸發WebHook去通知Telegram要怎麼做呢？
+Telegram Bot API 首先讓我們來瞧瞧Telegram Bot API，Telegram Bot提供API可以直接打Telegram Bot API發送訊息到指定的聊天室
+        </div>
+
+        <div class="read-more-link">
+          <a href="https://yulintsai.github.io/post/day-27/">Read More</a>
+        </div>
+      </article>
+      <article class="post">
+        <h1 class="post-title">
           <a href="https://yulintsai.github.io/post/day-26/">[Day 26] Oops！GitOps with Helm</a>
         </h1>
 
@@ -263,24 +281,6 @@ example:
 
         <div class="read-more-link">
           <a href="https://yulintsai.github.io/post/day-21/">Read More</a>
-        </div>
-      </article>
-      <article class="post">
-        <h1 class="post-title">
-          <a href="https://yulintsai.github.io/post/day-20/">[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks</a>
-        </h1>
-
-        <div class="post-date">
-          <time datetime="2020-09-28T09:36:00Z">Sep 28, 2020</time> &middot; 1 min read
-        </div>
-
-        <div>
-          Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。
-git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit &ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。
-        </div>
-
-        <div class="read-more-link">
-          <a href="https://yulintsai.github.io/post/day-20/">Read More</a>
         </div>
       </article>
   </div>
