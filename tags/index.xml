@@ -304,23 +304,5 @@
       <description></description>
     </item>
     
-    <item>
-      <title>tagA</title>
-      <link>https://yulintsai.github.io/tags/taga/</link>
-      <pubDate>Wed, 09 Sep 2020 08:22:46 +0000</pubDate>
-      
-      <guid>https://yulintsai.github.io/tags/taga/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>tagB</title>
-      <link>https://yulintsai.github.io/tags/tagb/</link>
-      <pubDate>Wed, 09 Sep 2020 08:22:46 +0000</pubDate>
-      
-      <guid>https://yulintsai.github.io/tags/tagb/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
