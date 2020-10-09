@@ -1,17 +1,72 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="generator" content="Hugo 0.76.2" />
+<!DOCTYPE HTML>
 
-  <title>[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks &middot; RainForest Notes</title>
+<html>
+    <head>
+        <script type="application/ld+json">
+    {
+        "@context" : "http://schema.org",
+        "@type" : "BlogPosting",
+        "mainEntityOfPage": {
+             "@type": "WebPage",
+             "@id": "https:\/\/yulintsai.github.io\/"
+        },
+        "articleSection" : "post",
+        "name" : "[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks",
+        "headline" : "[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks",
+        "description" : "Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。\ngit hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit \u0026ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。",
+        "inLanguage" : "en",
+        "author" : "",
+        "creator" : "",
+        "publisher": "",
+        "accountablePerson" : "",
+        "copyrightHolder" : "",
+        "copyrightYear" : "2020",
+        "datePublished": "2020-09-28 09:36:00 \u002b0000 UTC",
+        "dateModified" : "2020-09-28 09:36:00 \u002b0000 UTC",
+        "url" : "https:\/\/yulintsai.github.io\/post\/day-20\/",
+        "wordCount" : "194",
+        "keywords" : [ "git-hook","grpc","shellscript"," proto","Blog" ]
+    }
+    </script>
+        
+            
+                <title>[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks</title>
+            
+        
 
-  <meta name="description" content="" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="generator" content="Hugo 0.76.2" />
+        
 
-  
 
-<meta itemprop="name" content="[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks">
+        
+            <meta name="author" content="RainForest">
+        
+        
+            
+                <meta name="description" content="My Notes">
+            
+        
+
+        <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks"/>
+<meta name="twitter:description" content="Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。
+git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit &ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。"/>
+
+        <meta property="og:title" content="[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks" />
+<meta property="og:description" content="Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。
+git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit &ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://yulintsai.github.io/post/day-20/" />
+<meta property="article:published_time" content="2020-09-28T09:36:00+00:00" />
+<meta property="article:modified_time" content="2020-09-28T09:36:00+00:00" />
+
+        <meta property="og:image" content="https://yulintsai.github.io//images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <meta property="og:image:width" content="512">
+        <meta property="og:image:height" content="512">
+        <meta itemprop="name" content="[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks">
 <meta itemprop="description" content="Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。
 git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit &ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。">
 <meta itemprop="datePublished" content="2020-09-28T09:36:00+00:00" />
@@ -22,109 +77,329 @@ git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-app
 
 <meta itemprop="keywords" content="git-hook,grpc,shellscript, proto," />
 
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks"/>
-<meta name="twitter:description" content="Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。
-git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit &ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。"/>
-
-
-<meta property="og:title" content="[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks" />
-<meta property="og:description" content="Git Hooks 在git也有跟webhook類似的強大功能Git Hooks，是在git action觸發的同時去進行一些腳本。
-git hooks 列表    Hook 名稱 觸發指令     applypatch-msg git am   pre-applypatch git am   post-applypatch git am   pre-commit git commit   prepare-commit-msg git commit   post-commit git commit   post-checkout git checkout and git clone   post-merge git merge or git pull   pre-push git push   pre-receive git-receive-pack on the remote repo   update git-receive-pack on the remote repo   post-update git-receive-pack on the remote repo   post-rewrite git commit &ndash;amend, git-rebase    實作 Auto Protoc Builder 在commit之前觸發上自動幫你透過builder製作proto檔案，並自動git add build完成的files。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://yulintsai.github.io/post/day-20/" />
-<meta property="article:published_time" content="2020-09-28T09:36:00+00:00" />
-<meta property="article:modified_time" content="2020-09-28T09:36:00+00:00" />
-
-
-
-  <link type="text/css"
-        rel="stylesheet"
-        href="/css/print.css"
-        media="print">
-
-  <link type="text/css"
-        rel="stylesheet"
-        href="/css/poole.css">
-
-  <link type="text/css"
-        rel="stylesheet"
-        href="/css/hyde.css">
-
-  
-
-
-  
-
-  <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap">
-
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
-        integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk="
-        crossorigin="anonymous" />
-
-  <link rel="apple-touch-icon-precomposed"
-        sizes="144x144"
-        href="/apple-touch-icon-144-precomposed.png">
-
-  <link rel="shortcut icon" href="/favicon.png">
-
-  
-  </head>
-<body>
-  <aside class="sidebar">
-  <div class="container">
-    <div class="sidebar-about">
-      
         
-        <div class="author-image">
-          <img src="/images/mylogo.jpg" class="img-circle img-headshot center" alt="Profile Picture">
-        </div>
+
         
-      
+            
+        
 
-      <h1>RainForest Notes</h1>
+        
+        
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css">
+            <link rel="stylesheet" href="/css/main.css">
+            <link rel="stylesheet" href="/css/add-on.css">
+            <link rel="stylesheet" href="/css/academicons.min.css">
+        
+
+        
+
+
+  
+    
+
 
       
-      <p class="lead">My Notes</p>
-      
-    </div>
+    </head>
+    <body>
 
-    <nav>
-      <ul class="sidebar-nav">
-        <li>
-          <a href="https://yulintsai.github.io/">Home</a>
-        </li>
-        <li>
-          <a href="/post/">Posts</a>
-        </li><li>
-          <a href="/about/">About</a>
-        </li>
-      </ul>
+      
+      <div id="wrapper">
+
+    
+    
+<header id="header">
+    
+      <h1><a href="/"></a></h1>
+    
+
+    <nav class="links">
+        <ul>
+            
+                <li>
+                    <a href="/post/">
+                            <i class="posts">&nbsp;</i>Posts
+                    </a>
+                </li>
+            
+                <li>
+                    <a href="/about/">
+                            <i class="about">&nbsp;</i>About
+                    </a>
+                </li>
+            
+        </ul>
     </nav>
+    <nav class="main">
+        <ul>
+            
+            <li id="share-nav" class="share-menu" style="display:none;">
+                <a class="fa-share-alt" href="#share-menu">Share</a>
+            </li>
+            
+            <li class="search">
+                <a class="fa-search" href="#search">Search</a>
+                <form id="search" method="get" action="//google.com/search">
+                    <input type="text" name="q" placeholder="Search" />
+                    <input type="hidden" name="as_sitesearch" value="https://yulintsai.github.io/">
+                </form>
+            </li>
+            <li class="menu">
+                <a class="fa-bars" href="#menu">Menu</a>
+            </li>
+        </ul>
+    </nav>
+</header>
 
-    <section class="social-icons">
-      
-      <a href="https://github.com/yulintsai" rel="me" title="GitHub" target="_blank">
-        <i class="fab fa-github" aria-hidden="true"></i>
-      </a>
-      
+
+<section id="menu">
+
+    
+        <section>
+            <form class="search" method="get" action="//google.com/search">
+                <input type="text" name="q" placeholder="Search" />
+                <input type="hidden" name="as_sitesearch" value="https://yulintsai.github.io/">
+            </form>
+        </section>
+
+    
+        <section>
+            <ul class="links">
+                
+                    <li>
+                        <a href="/post/">
+                            <h3>
+                                <i class="posts">&nbsp;</i>Posts
+                            </h3>
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/about/">
+                            <h3>
+                                <i class="about">&nbsp;</i>About
+                            </h3>
+                        </a>
+                    </li>
+                
+            </ul>
+        </section>
+
+    
+        <section class="recent-posts">
+            <div class="mini-posts">
+                <header>
+                    <h3>Recent Posts</h3>
+                </header>
+                
+
+                
+                    
+                
+
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/day-30/">[Day 30] Oops！最終章 DevSecOps</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-10-08'>
+                                    October 8, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/">Posts</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-10-08'>
+                                    October 8, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/day-29/">[Day 29] Oops！Block DevOps</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-10-07'>
+                                    October 7, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/day-28/">[Day 28] Oops！Google Cloud Status Monitor with Telegram</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-10-06'>
+                                    October 6, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+                        <article class="mini-post">
+                            <header>
+                                <h3><a href="/post/day-27/">[Day 27] Oops！CI/CD trigger WebHook to Telegram Bot</a></h3>
+                                
+                                <time class="published" datetime=
+                                    '2020-10-05'>
+                                    October 5, 2020</time>
+                            </header>
+                            
+
+                        </article>
+                
+
+                
+                    <a href=
+                        
+                            "/post/"
+                        
+                        class="button">View more posts</a>
+                
+            </div>
+        </section>
+
+    
+        
+</section>
+
+    <section id="share-menu">
+    <section id="social-share-nav">
+        <ul class="links">
+            <header>
+                <h3>Share this post <i class="fa fa-smile-o"></i></h3>
+            </header>
+            
+
+
+
+<li>
+  <a href="//twitter.com/share?url=https%3a%2f%2fyulintsai.github.io%2fpost%2fday-20%2f&amp;text=%5bDay%2020%5d%20Oops%ef%bc%81gRPC%20-%20Auto%20Protoc%20Builder%20with%20Git%20Hooks&amp;via=" target="_blank" class="share-btn twitter">
+    <i class="fa fa-twitter"></i>
+    <p>Twitter</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//plus.google.com/share?url=https%3a%2f%2fyulintsai.github.io%2fpost%2fday-20%2f" target="_blank" class="share-btn google-plus">
+    <i class="fa fa-google-plus"></i>
+    <p>Google+</p>
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a href="//www.facebook.com/sharer/sharer.php?u=https%3a%2f%2fyulintsai.github.io%2fpost%2fday-20%2f" target="_blank" class="share-btn facebook">
+    <i class="fa fa-facebook"></i>
+    <p>Facebook</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//reddit.com/submit?url=https%3a%2f%2fyulintsai.github.io%2fpost%2fday-20%2f&amp;title=%5bDay%2020%5d%20Oops%ef%bc%81gRPC%20-%20Auto%20Protoc%20Builder%20with%20Git%20Hooks" target="_blank" class="share-btn reddit">
+    <i class="fa fa-reddit-alien"></i>
+    <p>Reddit</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.linkedin.com/shareArticle?url=https%3a%2f%2fyulintsai.github.io%2fpost%2fday-20%2f&amp;title=%5bDay%2020%5d%20Oops%ef%bc%81gRPC%20-%20Auto%20Protoc%20Builder%20with%20Git%20Hooks" target="_blank" class="share-btn linkedin">
+      <i class="fa fa-linkedin"></i>
+      <p>LinkedIn</p>
+    </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.stumbleupon.com/submit?url=https%3a%2f%2fyulintsai.github.io%2fpost%2fday-20%2f&amp;title=%5bDay%2020%5d%20Oops%ef%bc%81gRPC%20-%20Auto%20Protoc%20Builder%20with%20Git%20Hooks" target="_blank" class="share-btn stumbleupon">
+    <i class="fa fa-stumbleupon"></i>
+    <p>StumbleUpon</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="//www.pinterest.com/pin/create/button/?url=https%3a%2f%2fyulintsai.github.io%2fpost%2fday-20%2f&amp;description=%5bDay%2020%5d%20Oops%ef%bc%81gRPC%20-%20Auto%20Protoc%20Builder%20with%20Git%20Hooks" target="_blank" class="share-btn pinterest">
+    <i class="fa fa-pinterest-p"></i>
+    <p>Pinterest</p>
+  </a>
+</li>
+
+
+
+
+<li>
+  <a href="mailto:?subject=Check out this post by RainForest&amp;body=https%3a%2f%2fyulintsai.github.io%2fpost%2fday-20%2f" target="_blank" class="share-btn email">
+    <i class="fa fa-envelope"></i>
+    <p>Email</p>
+  </a>
+</li>
+
+
+        </ul>
     </section>
-  </div>
-</aside>
+</section>
+
+    
+    <div id="main">
+        
+        
+        <article class="post">
+  <header>
+    <div class="title">
+        
+            <h1><a href="/post/day-20/">[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks</a></h1>
+            
+        
+        
+    </div>
+    <div class="meta">
+        
+
+        <time class="published"
+            datetime='2020-09-28'>
+            September 28, 2020</time>
+        <span class="author">RainForest</span>
+        
+        
+    </div>
+</header>
 
 
-  <main class="content container">
-  <div class="post">
-  <h1>[Day 20] Oops！gRPC - Auto Protoc Builder with Git Hooks</h1>
+  
 
-  <div class="post-date">
-    <time datetime="2020-09-28T09:36:00Z">Sep 28, 2020</time> &middot; 1 min read
-  </div>
+  
 
-  <h1 id="git-hooks">Git Hooks</h1>
+  <div id="content">
+    <h1 id="git-hooks">Git Hooks</h1>
 <p>在<code>git</code>也有跟webhook類似的強大功能<code>Git Hooks</code>，是在git action觸發的同時去進行一些腳本。</p>
 <h2 id="git-hooks-列表">git hooks 列表</h2>
 <table>
@@ -233,28 +508,227 @@ docker run -v <span style="color:#66d9ef">$(</span>pwd<span style="color:#66d9ef
 <span style="color:#66d9ef">fi</span>
 </code></pre></div><p>這樣以後此proto的編輯者，只需專注於proto檔案的編輯，再也不用在擔心build的問題囉～</p>
 
-</div>
-
-
-  </main>
+  </div>
 
   <footer>
-  <div>
-    &copy; Yu-Lin Tsai 2020
+    <ul class="stats">
+  <li class="categories">
+    <ul>
+        
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+        
+            
+            
+                <i class="fa fa-tags"></i>
+                
+                
+                <li><a class="article-category-link" href="https://yulintsai.github.io/tags/git-hook">git-hook</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://yulintsai.github.io/tags/grpc">grpc</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://yulintsai.github.io/tags/shellscript">shellscript</a></li>
+                
+                
+                <li><a class="article-category-link" href="https://yulintsai.github.io/tags/proto"> proto</a></li>
+                
+            
+        
+    </ul>
+  </li>
+</ul>
 
+  </footer>
+
+</article>
+
+
+<ul class="actions pagination">
+    
+        <li><a href="/post/day-19/"
+                class="button big previous">[Day 19] Oops！gRPC - Protoc 容器化實作</a></li>
     
 
     
-  </div>
-</footer>
+        <li><a href="/post/day-21/"
+                class="button big next">[Day 21] Oops！Helm - 起手式</a></li>
+    
+</ul>
 
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"
-          integrity="sha256-MAgcygDRahs+F/Nk5Vz387whB4kSK9NXlDN3w58LLq0="
-          crossorigin="anonymous"></script>
+    </div>
+    
+<section id="sidebar">
 
+  
+  <section id="intro">
+    
+    
+    
+    
+  </section>
+
+  
+  <section class="recent-posts">
+    <div class="mini-posts">
+      <header>
+        <h3>Recent Posts</h3>
+      </header>
+      <div class="posts-container">
+        
+
+        
+          
+        
+
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/day-30/">[Day 30] Oops！最終章 DevSecOps</a>
+              </h3>
+              
+              <time class="published" datetime='2020-10-08'>
+                October 8, 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/">Posts</a>
+              </h3>
+              
+              <time class="published" datetime='2020-10-08'>
+                October 8, 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/day-29/">[Day 29] Oops！Block DevOps</a>
+              </h3>
+              
+              <time class="published" datetime='2020-10-07'>
+                October 7, 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/day-28/">[Day 28] Oops！Google Cloud Status Monitor with Telegram</a>
+              </h3>
+              
+              <time class="published" datetime='2020-10-06'>
+                October 6, 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+          <article class="mini-post">
+            <header>
+              <h3>
+                <a href="/post/day-27/">[Day 27] Oops！CI/CD trigger WebHook to Telegram Bot</a>
+              </h3>
+              
+              <time class="published" datetime='2020-10-05'>
+                October 5, 2020
+              </time>
+            </header>
+            
+
+          </article>
+        
+      </div>
+
+      
+        <a href=
+          
+            "/post/"
+          
+        class="button">View more posts</a>
+      
+    </div>
+  </section>
+
+  
+  
   
 
   
-</body>
+  
+
+  
+  <section id="footer">
+    
+    <p class="copyright">
+      
+        &copy; 2020
+        
+          Yu-Lin Tsai
+        
+      .
+      Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
+    </p>
+  </section>
+</section>
+
+    </div>
+    <a id="back-to-top" href="#" class="fa fa-arrow-up fa-border fa-2x"></a>
+    
+
+    
+      
+    
+
+    
+      
+      
+      
+        <script src="//cdn.bootcss.com/highlight.js//highlight.min.js"></script>
+        
+        
+        
+        <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+      
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+      <script src="/js/util.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/backToTop.js"></script>
+    
+
+    
+
+    
+    <script>hljs.initHighlightingOnLoad();</script>
+      <script src="//yihui.name/js/math-code.js"></script>
+<script async
+src="//cdn.bootcss.com/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+
+  </body>
 </html>
+
