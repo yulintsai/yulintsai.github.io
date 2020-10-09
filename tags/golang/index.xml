@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>golang  on RainForest Notes</title>
+    <title>golang  on Rain Forest</title>
     <link>https://yulintsai.github.io/tags/golang/</link>
-    <description>Recent content in golang  on RainForest Notes</description>
+    <description>Recent content in golang  on Rain Forest</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Tue, 06 Oct 2020 10:35:03 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />

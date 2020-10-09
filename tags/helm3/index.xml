@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>helm3 on RainForest Notes</title>
+    <title>helm3 on Rain Forest</title>
     <link>https://yulintsai.github.io/tags/helm3/</link>
-    <description>Recent content in helm3 on RainForest Notes</description>
+    <description>Recent content in helm3 on Rain Forest</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Sat, 03 Oct 2020 09:28:38 +0000</lastBuildDate><atom:link href="https://yulintsai.github.io/tags/helm3/index.xml" rel="self" type="application/rss+xml" />
